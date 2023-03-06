@@ -101,11 +101,17 @@ namespace ApeFree.ApeForms.Demo.DemoPanel
                 // 是否允许输入为空
                 s.AllowEmpty = false;
                 // 输入文本最大长度
-                s.MaximumLength = 50;
+                s.MaximumLength = 200;
                 // 输入文本最小长度
                 s.MinimumLength = 6;
                 // 是否多行
                 s.IsMultiline = false;
+                // 确认按钮文本
+                s.ConfirmOption.Text = "Confirm(确定)";
+                // 取消按钮文本
+                s.CancelOption.Text = "Cancel(取消)";
+                // 清空按钮文本
+                s.ClearOption.Text = "Clear(清空)";
             });
 
             dialog.Show();
@@ -138,10 +144,24 @@ namespace ApeFree.ApeForms.Demo.DemoPanel
                 s.Title = tbTitle.Text;
                 // 消息文本
                 s.Content = tbContent.Text;
-                // 默认输入文本
+                // 输入框默认文本
                 s.DefaultText = "You can set the default text in the input box by using the 'DefaultText' property.";
-                // 是否允许多行
+                // 是否可取消
+                s.Cancelable = true;
+                // 是否允许输入为空
+                s.AllowEmpty = false;
+                // 输入文本最大长度
+                s.MaximumLength = 200;
+                // 输入文本最小长度
+                s.MinimumLength = 6;
+                // 是否多行
                 s.IsMultiline = true;
+                // 确认按钮文本
+                s.ConfirmOption.Text = "Confirm(确定)";
+                // 取消按钮文本
+                s.CancelOption.Text = "Cancel(取消)";
+                // 清空按钮文本
+                s.ClearOption.Text = "Clear(清空)";
             });
 
             dialog.Show();
@@ -193,7 +213,8 @@ namespace ApeFree.ApeForms.Demo.DemoPanel
             //var dialog = provider.CreatePromptDialog(new PromptDialogSettings() { Title = tbTitle.Text, Content = tbContent.Text }, null);
 
             // 写法二（推荐）：
-            var dialog = provider.CreatePromptDialog(s=>{
+            var dialog = provider.CreatePromptDialog(s =>
+            {
                 // 标题文本
                 s.Title = tbTitle.Text;
                 // 消息文本
@@ -297,7 +318,8 @@ namespace ApeFree.ApeForms.Demo.DemoPanel
             //}, students, null, null);
 
             // 写法二（推荐）：
-            var dialog = provider.CreateMultipleSelectionDialog(students, null, s => {
+            var dialog = provider.CreateMultipleSelectionDialog(students, null, s =>
+            {
                 // 标题文本
                 s.Title = tbTitle.Text;
                 // 消息文本
@@ -316,7 +338,7 @@ namespace ApeFree.ApeForms.Demo.DemoPanel
             });
 
 
-           dialog.Show();
+            dialog.Show();
             if (dialog.Result.IsCancel)
             {
                 Toast.Show("取消选择");
