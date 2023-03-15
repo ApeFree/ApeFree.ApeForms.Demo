@@ -39,17 +39,14 @@
     <ApplicationIcon>ApeFree_48px.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ApeFree.ApeDialogs, Version=0.10.3.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\ApeFree.ApeDialogs.0.10.3-alpha0307\lib\net45\ApeFree.ApeDialogs.dll</HintPath>
+    <Reference Include="ApeFree.ApeDialogs, Version=0.10.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ApeFree.ApeDialogs.0.10.5\lib\net45\ApeFree.ApeDialogs.dll</HintPath>
     </Reference>
-    <Reference Include="ApeFree.ApeForms.Core, Version=0.10.3.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\ApeFree.ApeForms.Core.0.10.3-alpha0307\lib\net461\ApeFree.ApeForms.Core.dll</HintPath>
+    <Reference Include="ApeFree.ApeForms.Core, Version=0.10.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ApeFree.ApeForms.Core.0.10.5\lib\net461\ApeFree.ApeForms.Core.dll</HintPath>
     </Reference>
-    <Reference Include="ApeFree.ApeForms.Forms, Version=0.10.3.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\ApeFree.ApeForms.Forms.0.10.3-alpha0307\lib\net461\ApeFree.ApeForms.Forms.dll</HintPath>
-    </Reference>
-    <Reference Include="ApeFree.CodePlus.Algorithm, Version=0.9.6.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\ApeFree.CodePlus.Algorithm.0.9.6\lib\net45\ApeFree.CodePlus.Algorithm.dll</HintPath>
+    <Reference Include="ApeFree.ApeForms.Forms, Version=0.10.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ApeFree.ApeForms.Forms.0.10.5\lib\net461\ApeFree.ApeForms.Forms.dll</HintPath>
     </Reference>
     <Reference Include="Costura, Version=5.7.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Costura.Fody.5.7.0\lib\netstandard1.0\Costura.dll</HintPath>
