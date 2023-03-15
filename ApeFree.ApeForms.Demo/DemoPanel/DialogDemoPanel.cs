@@ -48,7 +48,7 @@ namespace ApeFree.ApeForms.Demo.DemoPanel
                 // 修改确认键文本
                 s.ConfirmOption.Text = "知道了";
                 // 修改Dialog窗体尺寸
-                s.DialogSize = new Size(400, 250);
+                s.DialogSize = new Size(400, 200);
                 // 修改标题名
                 s.Title = tbTitle.Text;
                 // 修改文本内容
@@ -219,9 +219,14 @@ namespace ApeFree.ApeForms.Demo.DemoPanel
                 s.Title = tbTitle.Text;
                 // 消息文本
                 s.Content = tbContent.Text;
+                // 积极选项文本
+                s.PositiveOption.Text = "Yes";
+                // 消极选项文本
+                s.NegativeOption.Text = "No";
             }, null);
 
             dialog.Show();
+
             if (dialog.Result.Data)
             {
                 Toast.Show("结果：积极选项");
