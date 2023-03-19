@@ -21,40 +21,40 @@ namespace ApeFree.ApeForms.Demo
         {
             new NavigationBarData("Button")
             {
-                {"Button",typeof( ButtonDemoPanel) },
+                {"Button",new Lazy<Control>(()=>new ButtonDemoPanel()) },
             },
             new NavigationBarData("DatePicker")
             {
-                {"DatePicker",typeof( DatePickerDemoPanel) },
+                {"DatePicker",new Lazy<Control>(()=>new DatePickerDemoPanel()) },
             },
             new NavigationBarData("Card")
             {
-                {"Magnet",typeof( MagnetDemoPanel) },
-                {"SimpleCard",typeof( SimpleCardDemoPanel) },
+                {"Magnet",new Lazy<Control>(()=>new MagnetDemoPanel()) },
+                {"SimpleCard",new Lazy<Control>(()=>new SimpleCardDemoPanel()) },
             },
             new NavigationBarData("Container")
             {
-                {"ControlListBox",typeof( ControlListBoxDemoPanel) },
-                {"SlideBox",typeof( SlideBoxDemoPanel) },
-                {"Shutter(preview)",typeof( ShutterDemoPanel) },
+                {"ControlListBox",new Lazy<Control>(()=>new ControlListBoxDemoPanel()) },
+                {"SlideBox",new Lazy<Control>(()=>new SlideBoxDemoPanel()) },
+                {"Shutter(preview)",new Lazy<Control>(()=>new ShutterDemoPanel()) },
             },
             new NavigationBarData("Notifications")
             {
-                {"Toast",typeof( ToastDemoPanel) },
-                {"Notification",typeof( NotificationBoxDemoPanel) },
+                {"Toast",new Lazy<Control>(()=>new ToastDemoPanel()) },
+                {"Notification",new Lazy<Control>(()=>new NotificationBoxDemoPanel()) },
             },
             new NavigationBarData("Dialogs")
             {
-                {"ApeDialogs",typeof( DialogDemoPanel) },
+                {"ApeDialogs",new Lazy<Control>(()=>new DialogDemoPanel()) },
             },
 
             new NavigationBarData("Extensions")
             {
-                {"Form",typeof( FormExtensionDemoPanel) },
+                {"Form",new Lazy<Control>(()=>new FormExtensionDemoPanel()) },
             },
             new NavigationBarData("GDI+")
             {
-                {"GdiPalette",typeof( GdiPaletteDemoPanel) },
+                {"GdiPalette",new Lazy<Control>(()=>new GdiPaletteDemoPanel()) },
             },
         };
 
@@ -67,6 +67,10 @@ namespace ApeFree.ApeForms.Demo
 
         private void DemoForm_Load(object sender, EventArgs e)
         {
+            // 修改关闭选项名称
+            slideTabControl.CloseAllPagesOptionText = "全部关闭";
+            slideTabControl.ClosePageOptionText = "关闭";
+
             foreach (NavigationBarData data in nav.Reverse())
             {
                 SimpleButtonShutter shutter = new SimpleButtonShutter();
@@ -78,7 +82,7 @@ namespace ApeFree.ApeForms.Demo
                 {
                     var btn = shutter.AddChildButton(kv.Key, (s, args) =>
                     {
-                        slideTabControl.AddPage(kv.Key, (Control)Activator.CreateInstance(kv.Value) , (data.Icon ?? this.Icon).ToBitmap());
+                        slideTabControl.AddPage(kv.Key, kv.Value.Value, (data.Icon ?? this.Icon).ToBitmap());
                     });
                     btn.BackColor = Color.FromArgb(70, 55, 100);
                     btn.ForeColor = Color.FromArgb(245, 245, 245);
@@ -113,7 +117,7 @@ namespace ApeFree.ApeForms.Demo
     /// <summary>
     /// 导航栏数据
     /// </summary>
-    public class NavigationBarData : Dictionary<string, Type>
+    public class NavigationBarData : Dictionary<string, Lazy<Control>>
     {
         public string Name { get; set; }
         public Icon Icon { get; set; }
