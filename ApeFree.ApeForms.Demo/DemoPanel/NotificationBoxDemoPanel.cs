@@ -19,34 +19,31 @@ namespace ApeFree.ApeForms.Demo.DemoPanel
         {
             InitializeComponent();
 
-            if (NotificationBox.Orientation == NotifyOrientation.Queue)
+            if (Notification.Orientation == NotifyOrientation.Queue)
             {
                 rbtnOrientationQueue.Checked = true;
             }
 
-            if (NotificationBox.PrimeDirection == NotifyPrimeDirection.Top)
+            if (Notification.PrimeDirection == NotifyPrimeDirection.Top)
             {
                 rbtnPrimeDirectionTop.Checked = true;
             }
 
-            nudDefaultWidth.Value = NotificationBox.DefaultFormsSize.Width;
-            nudDefaultHeight.Value = NotificationBox.DefaultFormsSize.Height;
-            nudSpacingDistance.Value = NotificationBox.SpacingDistance;
-
+            nudDefaultWidth.Value = Notification.DefaultFormsSize.Width;
+            nudDefaultHeight.Value = Notification.DefaultFormsSize.Height;
+            nudSpacingDistance.Value = Notification.SpacingDistance;
         }
-
-
 
         private void rbtnOrientation_CheckedChanged(object sender, EventArgs e)
         {
             if (rbtnOrientationQueue.Checked)
             {
-                NotificationBox.Orientation = NotifyOrientation.Queue;
+                Notification.Orientation = NotifyOrientation.Queue;
 
             }
             else if (rbtnOrientationStack.Checked)
             {
-                NotificationBox.Orientation = NotifyOrientation.Stack;
+                Notification.Orientation = NotifyOrientation.Stack;
             }
         }
 
@@ -54,40 +51,50 @@ namespace ApeFree.ApeForms.Demo.DemoPanel
         {
             if (rbtnPrimeDirectionTop.Checked)
             {
-                NotificationBox.PrimeDirection = NotifyPrimeDirection.Top;
+                Notification.PrimeDirection = NotifyPrimeDirection.Top;
 
             }
             else if (rbtnPrimeDirectionBottom.Checked)
             {
-                NotificationBox.PrimeDirection = NotifyPrimeDirection.Bottom;
+                Notification.PrimeDirection = NotifyPrimeDirection.Bottom;
             }
         }
 
         private void btnChangeDefaultSzie_Click(object sender, EventArgs e)
         {
-            NotificationBox.DefaultFormsSize = new Size((int)nudDefaultWidth.Value, (int)nudDefaultHeight.Value);
-            NotificationBox.SpacingDistance = (int)nudSpacingDistance.Value;
+            Notification.DefaultFormsSize = new Size((int)nudDefaultWidth.Value, (int)nudDefaultHeight.Value);
+            Notification.SpacingDistance = (int)nudSpacingDistance.Value;
         }
 
         private void btnPublishText_Click(object sender, EventArgs e)
         {
-            var notify = NotificationBox.Publish(tbNotificationTitle.Text, "Notification(Text)", (uint)nudDisappearDelay.Value);
-            notify.ReminderColor = btnReminderColor.BackColor;
+            var notify = Notification.Builder.ShowTextNotification(s =>
+            {
+                s.Title = tbNotificationTitle.Text;
+                s.Message = "Notification(Text)";
+                s.RetentionTime = (uint)nudDisappearDelay.Value;
+                s.ReminderColor = btnReminderColor.BackColor;
+            });
         }
 
         private void btnPublishImageText_Click(object sender, EventArgs e)
         {
-            var notify = NotificationBox.Publish(tbNotificationTitle.Text, "Notification(Image + Text)", Resources.Magnet_12, (uint)nudDisappearDelay.Value);
-            notify.ReminderColor = btnReminderColor.BackColor;
-            notify.AddOption("关闭通知栏", (s, args) =>
+            var notify = Notification.Builder.ShowImageTextNotification(s =>
             {
-                Toast.Show("此按钮会关闭通知栏");
-            });
-
-            notify.AddOption("不关闭通知栏", (s, args) =>
-            {
-                args.IsDisappear = false;
-                Toast.Show("修改事件参数的IsDisappear属性，通知栏将不会被关闭");
+                s.Title = tbNotificationTitle.Text;
+                s.Message = "Notification(Image + Text)";
+                s.Image = Resources.Magnet_12;
+                s.RetentionTime = (uint)nudDisappearDelay.Value;
+                s.ReminderColor = btnReminderColor.BackColor;
+                s.Options.Add(new NotificationOption("关闭通知栏", (obj, args) =>
+                {
+                    Toast.Show("此按钮会关闭通知栏");
+                }));
+                s.Options.Add(new NotificationOption("不关闭通知栏", (obj, args) =>
+                {
+                    args.IsDisappear = false;
+                    Toast.Show("修改事件参数的IsDisappear属性，通知栏将不会被关闭");
+                }));
             });
         }
 
@@ -95,11 +102,17 @@ namespace ApeFree.ApeForms.Demo.DemoPanel
         {
             this.FindForm().WindowState = FormWindowState.Minimized;
 
-            var notify = NotificationBox.Publish("ApeForms", "Demo窗体已被最小化到开始栏，可通过下方按键还原窗体。", Resources.ImageButton_1, 10000);
-            notify.ReminderColor = btnReminderColor.BackColor;
-            notify.AddOption("窗口最大化", (s, args) =>
+            var notify = Notification.Builder.ShowImageTextNotification(s =>
             {
-                this.FindForm().WindowState = FormWindowState.Normal;
+                s.Title = "ApeForms";
+                s.Message = "Demo窗体已被最小化到开始栏，可通过下方按键还原窗体。";
+                s.Image = Resources.ImageButton_1;
+                s.RetentionTime = 0;
+                s.ReminderColor = btnReminderColor.BackColor;
+                s.Options.Add(new NotificationOption("窗口最大化", (obj, args) =>
+                {
+                    this.FindForm().WindowState = FormWindowState.Normal;
+                }));
             });
         }
 
