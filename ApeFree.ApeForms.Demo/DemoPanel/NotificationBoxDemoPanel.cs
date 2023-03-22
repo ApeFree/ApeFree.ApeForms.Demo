@@ -71,9 +71,29 @@ namespace ApeFree.ApeForms.Demo.DemoPanel
             var notify = Notification.Builder.ShowTextNotification(s =>
             {
                 s.Title = tbNotificationTitle.Text;
-                s.Message = "Notification(Text)";
+                s.Message = "这是一个纯文本类型的消息通知栏，你可以在此处设置任何文本";
                 s.RetentionTime = (uint)nudDisappearDelay.Value;
                 s.ReminderColor = btnReminderColor.BackColor;
+            });
+        }
+
+        private void btnPublishTextWithOptions_Click(object sender, EventArgs e)
+        {
+            var notify = Notification.Builder.ShowTextNotification(s =>
+            {
+                s.Title = tbNotificationTitle.Text;
+                s.Message = "这是一个纯文本类型的消息通知栏，你可以在此处设置任何文本。通知栏允许添加自定义选项（可配置选项的单击事件）。";
+                s.RetentionTime = (uint)nudDisappearDelay.Value;
+                s.ReminderColor = btnReminderColor.BackColor;
+
+                s.Options.Add(new NotificationOption("选项1", (obj, args) =>
+                {
+                    Toast.Show("你选择了选项1");
+                }));
+                s.Options.Add(new NotificationOption("选项2", (obj, args) =>
+                {
+                    Toast.Show("你选择了选项2");
+                }));
             });
         }
 
@@ -82,18 +102,31 @@ namespace ApeFree.ApeForms.Demo.DemoPanel
             var notify = Notification.Builder.ShowImageTextNotification(s =>
             {
                 s.Title = tbNotificationTitle.Text;
-                s.Message = "Notification(Image + Text)";
+                s.Message = "这是一个图片+文本类型的消息通知栏，你可以自定义显示图片和显示文本。";
+                s.Image = Resources.Magnet_12;
+                s.ImageSizeMode = PictureBoxSizeMode.StretchImage;
+                s.RetentionTime = (uint)nudDisappearDelay.Value;
+                s.ReminderColor = btnReminderColor.BackColor;
+            });
+        }
+
+        private void btnPublishImageTextWithOptions_Click(object sender, EventArgs e)
+        {
+            var notify = Notification.Builder.ShowImageTextNotification(s =>
+            {
+                s.Title = tbNotificationTitle.Text;
+                s.Message = "这是一个图片+文本类型的消息通知栏，你可以自定义显示图片和显示文本。通知栏允许添加自定义选项（可配置选项的单击事件）。";
                 s.Image = Resources.Magnet_12;
                 s.RetentionTime = (uint)nudDisappearDelay.Value;
                 s.ReminderColor = btnReminderColor.BackColor;
-                s.Options.Add(new NotificationOption("关闭通知栏", (obj, args) =>
+                s.Options.Add(new NotificationOption("单击后关闭", (obj, args) =>
                 {
-                    Toast.Show("此按钮会关闭通知栏");
+                    Toast.Show("默认状态下，单击任意选项后都会关闭通知栏");
                 }));
-                s.Options.Add(new NotificationOption("不关闭通知栏", (obj, args) =>
+                s.Options.Add(new NotificationOption("单击后不关闭", (obj, args) =>
                 {
                     args.IsDisappear = false;
-                    Toast.Show("修改事件参数的IsDisappear属性，通知栏将不会被关闭");
+                    Toast.Show("修改事件参数的IsDisappear属性，通知栏将不会被关闭。");
                 }));
             });
         }
@@ -107,7 +140,7 @@ namespace ApeFree.ApeForms.Demo.DemoPanel
                 s.Title = "ApeForms";
                 s.Message = "Demo窗体已被最小化到开始栏，可通过下方按键还原窗体。";
                 s.Image = Resources.ImageButton_1;
-                s.RetentionTime = 0;
+                s.RetentionTime = 10000;
                 s.ReminderColor = btnReminderColor.BackColor;
                 s.Options.Add(new NotificationOption("窗口最大化", (obj, args) =>
                 {
@@ -126,5 +159,7 @@ namespace ApeFree.ApeForms.Demo.DemoPanel
             if (colorDialog.ShowDialog() == DialogResult.OK)
                 btnReminderColor.BackColor = colorDialog.Color;
         }
+
+
     }
 }

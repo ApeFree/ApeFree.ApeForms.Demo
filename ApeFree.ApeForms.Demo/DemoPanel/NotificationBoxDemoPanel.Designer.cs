@@ -48,15 +48,17 @@
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.btnPublishImageText = new ApeFree.ApeForms.Core.Controls.SimpleButton();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.groupBox11 = new System.Windows.Forms.GroupBox();
+            this.btnReminderColor = new ApeFree.ApeForms.Core.Controls.SimpleButton();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
             this.nudDisappearDelay = new System.Windows.Forms.NumericUpDown();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.tbNotificationTitle = new System.Windows.Forms.TextBox();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
             this.btnPublishOptionDemo = new ApeFree.ApeForms.Core.Controls.SimpleButton();
-            this.groupBox11 = new System.Windows.Forms.GroupBox();
-            this.btnReminderColor = new ApeFree.ApeForms.Core.Controls.SimpleButton();
             this.colorDialog = new System.Windows.Forms.ColorDialog();
+            this.btnPublishTextWithOptions = new ApeFree.ApeForms.Core.Controls.SimpleButton();
+            this.btnPublishImageTextWithOptions = new ApeFree.ApeForms.Core.Controls.SimpleButton();
             this.groupBox1.SuspendLayout();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudSpacingDistance)).BeginInit();
@@ -67,11 +69,11 @@
             this.groupBox5.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox7.SuspendLayout();
+            this.groupBox11.SuspendLayout();
             this.groupBox9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudDisappearDelay)).BeginInit();
             this.groupBox8.SuspendLayout();
             this.groupBox10.SuspendLayout();
-            this.groupBox11.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -139,6 +141,9 @@
             this.btnChangeDefaultSzie.BorderSize = 0;
             this.btnChangeDefaultSzie.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnChangeDefaultSzie.FlatAppearance.BorderSize = 0;
+            this.btnChangeDefaultSzie.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(134)))), ((int)(((byte)(224)))));
+            this.btnChangeDefaultSzie.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(97)))), ((int)(((byte)(163)))));
+            this.btnChangeDefaultSzie.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(244)))));
             this.btnChangeDefaultSzie.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnChangeDefaultSzie.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnChangeDefaultSzie.Location = new System.Drawing.Point(3, 125);
@@ -146,7 +151,6 @@
             this.btnChangeDefaultSzie.Size = new System.Drawing.Size(128, 30);
             this.btnChangeDefaultSzie.TabIndex = 4;
             this.btnChangeDefaultSzie.Text = "Chnage";
-            this.btnChangeDefaultSzie.Title = "Chnage";
             this.btnChangeDefaultSzie.UseVisualStyleBackColor = false;
             this.btnChangeDefaultSzie.Click += new System.EventHandler(this.btnChangeDefaultSzie_Click);
             // 
@@ -284,6 +288,7 @@
             // 
             // groupBox5
             // 
+            this.groupBox5.Controls.Add(this.btnPublishTextWithOptions);
             this.groupBox5.Controls.Add(this.btnPublishText);
             this.groupBox5.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox5.Location = new System.Drawing.Point(0, 239);
@@ -299,19 +304,22 @@
             this.btnPublishText.BorderColor = System.Drawing.Color.Empty;
             this.btnPublishText.BorderSize = 0;
             this.btnPublishText.FlatAppearance.BorderSize = 0;
+            this.btnPublishText.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(134)))), ((int)(((byte)(224)))));
+            this.btnPublishText.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(97)))), ((int)(((byte)(163)))));
+            this.btnPublishText.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(244)))));
             this.btnPublishText.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPublishText.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnPublishText.Location = new System.Drawing.Point(6, 20);
             this.btnPublishText.Name = "btnPublishText";
             this.btnPublishText.Size = new System.Drawing.Size(95, 30);
             this.btnPublishText.TabIndex = 0;
-            this.btnPublishText.Text = "Publish";
-            this.btnPublishText.Title = "Publish";
+            this.btnPublishText.Text = "No Option";
             this.btnPublishText.UseVisualStyleBackColor = false;
             this.btnPublishText.Click += new System.EventHandler(this.btnPublishText_Click);
             // 
             // groupBox6
             // 
+            this.groupBox6.Controls.Add(this.btnPublishImageTextWithOptions);
             this.groupBox6.Controls.Add(this.btnPublishImageText);
             this.groupBox6.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox6.Location = new System.Drawing.Point(0, 299);
@@ -327,14 +335,16 @@
             this.btnPublishImageText.BorderColor = System.Drawing.Color.Empty;
             this.btnPublishImageText.BorderSize = 0;
             this.btnPublishImageText.FlatAppearance.BorderSize = 0;
+            this.btnPublishImageText.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(134)))), ((int)(((byte)(224)))));
+            this.btnPublishImageText.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(97)))), ((int)(((byte)(163)))));
+            this.btnPublishImageText.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(244)))));
             this.btnPublishImageText.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPublishImageText.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnPublishImageText.Location = new System.Drawing.Point(6, 20);
             this.btnPublishImageText.Name = "btnPublishImageText";
             this.btnPublishImageText.Size = new System.Drawing.Size(95, 30);
             this.btnPublishImageText.TabIndex = 0;
-            this.btnPublishImageText.Text = "Publish";
-            this.btnPublishImageText.Title = "Publish";
+            this.btnPublishImageText.Text = "No Option";
             this.btnPublishImageText.UseVisualStyleBackColor = false;
             this.btnPublishImageText.Click += new System.EventHandler(this.btnPublishImageText_Click);
             // 
@@ -350,6 +360,37 @@
             this.groupBox7.TabIndex = 4;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Public Parameters";
+            // 
+            // groupBox11
+            // 
+            this.groupBox11.Controls.Add(this.btnReminderColor);
+            this.groupBox11.Dock = System.Windows.Forms.DockStyle.Left;
+            this.groupBox11.Location = new System.Drawing.Point(271, 17);
+            this.groupBox11.Name = "groupBox11";
+            this.groupBox11.Size = new System.Drawing.Size(134, 41);
+            this.groupBox11.TabIndex = 3;
+            this.groupBox11.TabStop = false;
+            this.groupBox11.Text = "Reminder Color";
+            // 
+            // btnReminderColor
+            // 
+            this.btnReminderColor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btnReminderColor.BorderColor = System.Drawing.Color.Empty;
+            this.btnReminderColor.BorderSize = 0;
+            this.btnReminderColor.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnReminderColor.FlatAppearance.BorderSize = 0;
+            this.btnReminderColor.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(134)))), ((int)(((byte)(224)))));
+            this.btnReminderColor.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(97)))), ((int)(((byte)(163)))));
+            this.btnReminderColor.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(244)))));
+            this.btnReminderColor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReminderColor.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnReminderColor.Location = new System.Drawing.Point(3, 17);
+            this.btnReminderColor.Name = "btnReminderColor";
+            this.btnReminderColor.Size = new System.Drawing.Size(128, 21);
+            this.btnReminderColor.TabIndex = 5;
+            this.btnReminderColor.Text = "Choose color";
+            this.btnReminderColor.UseVisualStyleBackColor = false;
+            this.btnReminderColor.Click += new System.EventHandler(this.btnReminderColor_Click);
             // 
             // groupBox9
             // 
@@ -423,6 +464,9 @@
             this.btnPublishOptionDemo.BorderColor = System.Drawing.Color.Empty;
             this.btnPublishOptionDemo.BorderSize = 0;
             this.btnPublishOptionDemo.FlatAppearance.BorderSize = 0;
+            this.btnPublishOptionDemo.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(134)))), ((int)(((byte)(224)))));
+            this.btnPublishOptionDemo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(97)))), ((int)(((byte)(163)))));
+            this.btnPublishOptionDemo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(244)))));
             this.btnPublishOptionDemo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPublishOptionDemo.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnPublishOptionDemo.Location = new System.Drawing.Point(6, 20);
@@ -430,38 +474,46 @@
             this.btnPublishOptionDemo.Size = new System.Drawing.Size(95, 30);
             this.btnPublishOptionDemo.TabIndex = 0;
             this.btnPublishOptionDemo.Text = "Minimization";
-            this.btnPublishOptionDemo.Title = "Minimization";
             this.btnPublishOptionDemo.UseVisualStyleBackColor = false;
             this.btnPublishOptionDemo.Click += new System.EventHandler(this.btnPublishOptionDemo_Click);
             // 
-            // groupBox11
+            // btnPublishTextWithOptions
             // 
-            this.groupBox11.Controls.Add(this.btnReminderColor);
-            this.groupBox11.Dock = System.Windows.Forms.DockStyle.Left;
-            this.groupBox11.Location = new System.Drawing.Point(271, 17);
-            this.groupBox11.Name = "groupBox11";
-            this.groupBox11.Size = new System.Drawing.Size(134, 41);
-            this.groupBox11.TabIndex = 3;
-            this.groupBox11.TabStop = false;
-            this.groupBox11.Text = "Reminder Color";
+            this.btnPublishTextWithOptions.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btnPublishTextWithOptions.BorderColor = System.Drawing.Color.Empty;
+            this.btnPublishTextWithOptions.BorderSize = 0;
+            this.btnPublishTextWithOptions.FlatAppearance.BorderSize = 0;
+            this.btnPublishTextWithOptions.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(134)))), ((int)(((byte)(224)))));
+            this.btnPublishTextWithOptions.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(97)))), ((int)(((byte)(163)))));
+            this.btnPublishTextWithOptions.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(244)))));
+            this.btnPublishTextWithOptions.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPublishTextWithOptions.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnPublishTextWithOptions.Location = new System.Drawing.Point(107, 20);
+            this.btnPublishTextWithOptions.Name = "btnPublishTextWithOptions";
+            this.btnPublishTextWithOptions.Size = new System.Drawing.Size(95, 30);
+            this.btnPublishTextWithOptions.TabIndex = 1;
+            this.btnPublishTextWithOptions.Text = "Options";
+            this.btnPublishTextWithOptions.UseVisualStyleBackColor = false;
+            this.btnPublishTextWithOptions.Click += new System.EventHandler(this.btnPublishTextWithOptions_Click);
             // 
-            // btnReminderColor
+            // btnPublishImageTextWithOptions
             // 
-            this.btnReminderColor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.btnReminderColor.BorderColor = System.Drawing.Color.Empty;
-            this.btnReminderColor.BorderSize = 0;
-            this.btnReminderColor.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnReminderColor.FlatAppearance.BorderSize = 0;
-            this.btnReminderColor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReminderColor.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnReminderColor.Location = new System.Drawing.Point(3, 17);
-            this.btnReminderColor.Name = "btnReminderColor";
-            this.btnReminderColor.Size = new System.Drawing.Size(128, 21);
-            this.btnReminderColor.TabIndex = 5;
-            this.btnReminderColor.Text = "Choose color";
-            this.btnReminderColor.Title = "Choose color";
-            this.btnReminderColor.UseVisualStyleBackColor = false;
-            this.btnReminderColor.Click += new System.EventHandler(this.btnReminderColor_Click);
+            this.btnPublishImageTextWithOptions.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btnPublishImageTextWithOptions.BorderColor = System.Drawing.Color.Empty;
+            this.btnPublishImageTextWithOptions.BorderSize = 0;
+            this.btnPublishImageTextWithOptions.FlatAppearance.BorderSize = 0;
+            this.btnPublishImageTextWithOptions.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(134)))), ((int)(((byte)(224)))));
+            this.btnPublishImageTextWithOptions.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(97)))), ((int)(((byte)(163)))));
+            this.btnPublishImageTextWithOptions.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(244)))));
+            this.btnPublishImageTextWithOptions.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPublishImageTextWithOptions.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnPublishImageTextWithOptions.Location = new System.Drawing.Point(107, 20);
+            this.btnPublishImageTextWithOptions.Name = "btnPublishImageTextWithOptions";
+            this.btnPublishImageTextWithOptions.Size = new System.Drawing.Size(95, 30);
+            this.btnPublishImageTextWithOptions.TabIndex = 2;
+            this.btnPublishImageTextWithOptions.Text = "Options";
+            this.btnPublishImageTextWithOptions.UseVisualStyleBackColor = false;
+            this.btnPublishImageTextWithOptions.Click += new System.EventHandler(this.btnPublishImageTextWithOptions_Click);
             // 
             // NotificationBoxDemoPanel
             // 
@@ -487,12 +539,12 @@
             this.groupBox5.ResumeLayout(false);
             this.groupBox6.ResumeLayout(false);
             this.groupBox7.ResumeLayout(false);
+            this.groupBox11.ResumeLayout(false);
             this.groupBox9.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.nudDisappearDelay)).EndInit();
             this.groupBox8.ResumeLayout(false);
             this.groupBox8.PerformLayout();
             this.groupBox10.ResumeLayout(false);
-            this.groupBox11.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -528,5 +580,7 @@
         private System.Windows.Forms.GroupBox groupBox11;
         private Core.Controls.SimpleButton btnReminderColor;
         private System.Windows.Forms.ColorDialog colorDialog;
+        private Core.Controls.SimpleButton btnPublishTextWithOptions;
+        private Core.Controls.SimpleButton btnPublishImageTextWithOptions;
     }
 }
