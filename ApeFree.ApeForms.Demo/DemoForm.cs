@@ -51,6 +51,7 @@ namespace ApeFree.ApeForms.Demo
             new NavigationBarData("Extensions")
             {
                 {"Form",new Lazy<Control>(()=>new FormExtensionDemoPanel()) },
+                {"GradualChange",new Lazy<Control>(()=>new GradualChangeExtensionDemoPanel()) },
             },
             new NavigationBarData("GDI+")
             {
