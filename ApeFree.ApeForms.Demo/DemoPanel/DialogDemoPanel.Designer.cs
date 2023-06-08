@@ -49,7 +49,7 @@
             this.btnPromptDialog = new ApeFree.ApeForms.Core.Controls.SimpleButton();
             this.btnSelectionDialog = new ApeFree.ApeForms.Core.Controls.SimpleButton();
             this.btnMultipleSelectionDialog = new ApeFree.ApeForms.Core.Controls.SimpleButton();
-            this.btnbtnDataEntrySheetDialog = new ApeFree.ApeForms.Core.Controls.SimpleButton();
+            this.btnDataEntrySheetDialog = new ApeFree.ApeForms.Core.Controls.SimpleButton();
             this.groupBox1.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -248,7 +248,7 @@
             this.flowLayoutPanel1.Controls.Add(this.btnPromptDialog);
             this.flowLayoutPanel1.Controls.Add(this.btnSelectionDialog);
             this.flowLayoutPanel1.Controls.Add(this.btnMultipleSelectionDialog);
-            this.flowLayoutPanel1.Controls.Add(this.btnbtnDataEntrySheetDialog);
+            this.flowLayoutPanel1.Controls.Add(this.btnDataEntrySheetDialog);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 17);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
@@ -388,24 +388,24 @@
             this.btnMultipleSelectionDialog.UseVisualStyleBackColor = false;
             this.btnMultipleSelectionDialog.Click += new System.EventHandler(this.btnMultipleSelectionDialog_Click);
             // 
-            // btnbtnDataEntrySheetDialog
+            // btnDataEntrySheetDialog
             // 
-            this.btnbtnDataEntrySheetDialog.AutoSize = true;
-            this.btnbtnDataEntrySheetDialog.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.btnbtnDataEntrySheetDialog.BorderColor = System.Drawing.Color.Empty;
-            this.btnbtnDataEntrySheetDialog.BorderSize = 1;
-            this.btnbtnDataEntrySheetDialog.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(134)))), ((int)(((byte)(224)))));
-            this.btnbtnDataEntrySheetDialog.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(97)))), ((int)(((byte)(163)))));
-            this.btnbtnDataEntrySheetDialog.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(244)))));
-            this.btnbtnDataEntrySheetDialog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnbtnDataEntrySheetDialog.ForeColor = System.Drawing.Color.White;
-            this.btnbtnDataEntrySheetDialog.Location = new System.Drawing.Point(482, 46);
-            this.btnbtnDataEntrySheetDialog.Name = "btnbtnDataEntrySheetDialog";
-            this.btnbtnDataEntrySheetDialog.Size = new System.Drawing.Size(155, 37);
-            this.btnbtnDataEntrySheetDialog.TabIndex = 7;
-            this.btnbtnDataEntrySheetDialog.Text = "btnDataEntrySheetDialog";
-            this.btnbtnDataEntrySheetDialog.UseVisualStyleBackColor = false;
-            this.btnbtnDataEntrySheetDialog.Click += new System.EventHandler(this.btnDataEntrySheetDialog_Click);
+            this.btnDataEntrySheetDialog.AutoSize = true;
+            this.btnDataEntrySheetDialog.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btnDataEntrySheetDialog.BorderColor = System.Drawing.Color.Empty;
+            this.btnDataEntrySheetDialog.BorderSize = 1;
+            this.btnDataEntrySheetDialog.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(134)))), ((int)(((byte)(224)))));
+            this.btnDataEntrySheetDialog.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(97)))), ((int)(((byte)(163)))));
+            this.btnDataEntrySheetDialog.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(244)))));
+            this.btnDataEntrySheetDialog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDataEntrySheetDialog.ForeColor = System.Drawing.Color.White;
+            this.btnDataEntrySheetDialog.Location = new System.Drawing.Point(482, 46);
+            this.btnDataEntrySheetDialog.Name = "btnDataEntrySheetDialog";
+            this.btnDataEntrySheetDialog.Size = new System.Drawing.Size(155, 37);
+            this.btnDataEntrySheetDialog.TabIndex = 7;
+            this.btnDataEntrySheetDialog.Text = "DataEntrySheetDialog";
+            this.btnDataEntrySheetDialog.UseVisualStyleBackColor = false;
+            this.btnDataEntrySheetDialog.Click += new System.EventHandler(this.btnDataEntrySheetDialog_Click);
             // 
             // DialogDemoPanel
             // 
@@ -449,6 +449,6 @@
         private Core.Controls.SimpleButton btnNegativeOptionColor;
         private Core.Controls.SimpleButton btnFunctionalOptionColor;
         private Core.Controls.SimpleButton btnSpecialOptionColor;
-        private Core.Controls.SimpleButton btnbtnDataEntrySheetDialog;
+        private Core.Controls.SimpleButton btnDataEntrySheetDialog;
     }
 }
