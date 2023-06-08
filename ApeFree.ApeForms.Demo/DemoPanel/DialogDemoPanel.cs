@@ -354,6 +354,94 @@ namespace ApeFree.ApeForms.Demo.DemoPanel
             }
         }
 
+        private void btnDataEntrySheetDialog_Click(object sender, EventArgs e)
+        {
+            // 创建表单
+            DataEntrySheet sheet = new DataEntrySheet();
+            sheet.AddTextField(new TextField()
+            {
+                Title = "姓名",
+                Data = "张三",
+            });
+            sheet.AddPasswordField(new PasswordField()
+            {
+                Title = "密码",
+                Data = "12345",
+            });
+            sheet.AddDateTimeField(new DateTimeField()
+            {
+                Title = "生日",
+                Data = DateTime.Now
+            });
+            sheet.AddNumberField(new NumberField()
+            {
+                Title = "年龄",
+                Data = 16,
+                DecimalPlaces = 1,
+                Maximum = 120,
+                Minimum = 0,
+            });
+            sheet.AddFilePathField(new FilePathField()
+            {
+                Title = "照片",
+            });
+            sheet.AddSingleChoiceField(new SingleChoiceField()
+            {
+                Title = "户籍",
+                Items = new[] { "城市户口", "农村户口", "不确定" },
+                Data = "不确定",
+            });
+            sheet.AddMultipleChoiceField(new MultipleChoiceField()
+            {
+                Title = "特长",
+                Items = new[] { "唱歌", "跳舞", "打篮球", "铁山靠" },
+                Data = new[] { "打篮球", "铁山靠" },
+            });
+            sheet.AddTextField(new TextField()
+            {
+                Title = "简介",
+                Data = "一个平平无奇的高中生，喜欢唱、跳、rap、篮球。",
+                IsMultiline = true
+            });
+
+            var dialog = provider.CreateDataEntrySheetDialog(sheet, new DataEntrySheetDialogSettings().With(s =>
+            {
+                // 标题文本
+                s.Title = "标题文本";
+                // 消息文本
+                s.Content = "消息文本";
+                // 窗体尺寸
+                s.DialogSize = new Size(450, 600);
+
+                s.PrecheckResult = sht =>
+                {
+                    if (((string)sht["密码"].Data).Length < 6)
+                    {
+                        Toast.Show("密码至少6位", 2000, null, ToastMode.Reuse);
+                        return false;
+                    }
+
+                    if (!((object[])sht["特长"].Data).Any())
+                    {
+                        Toast.Show("至少选择一个特长", 2000, null, ToastMode.Reuse);
+                        return false;
+                    }
+
+                    return true;
+                };
+            }), null);
+            dialog.Show();
+            if (dialog.Result.IsCancel)
+            {
+                Toast.Show("取消输入", 2000, null, ToastMode.Reuse);
+            }
+            else
+            {
+                var lines = dialog.Result.Data.Fields.Select(p => $"{p.Title}：\t{p.Data}");
+                Toast.Show($"{lines.Join("\r\n")}", 2000, null, ToastMode.Reuse);
+            }
+        }
+
         private void btnOptionColor_Click(object sender, EventArgs e)
         {
             var btn = sender as Control;

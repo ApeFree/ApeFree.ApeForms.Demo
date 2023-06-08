@@ -49,6 +49,7 @@
             this.btnPromptDialog = new ApeFree.ApeForms.Core.Controls.SimpleButton();
             this.btnSelectionDialog = new ApeFree.ApeForms.Core.Controls.SimpleButton();
             this.btnMultipleSelectionDialog = new ApeFree.ApeForms.Core.Controls.SimpleButton();
+            this.btnbtnDataEntrySheetDialog = new ApeFree.ApeForms.Core.Controls.SimpleButton();
             this.groupBox1.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -59,10 +60,9 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label1.Location = new System.Drawing.Point(4, 20);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(3, 17);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(32, 17);
+            this.label1.Size = new System.Drawing.Size(35, 12);
             this.label1.TabIndex = 0;
             this.label1.Text = "Title";
             // 
@@ -76,10 +76,8 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(863, 183);
+            this.groupBox1.Size = new System.Drawing.Size(740, 129);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Basic Settings";
@@ -92,10 +90,9 @@
             this.flowLayoutPanel2.Controls.Add(this.btnFunctionalOptionColor);
             this.flowLayoutPanel2.Controls.Add(this.btnSpecialOptionColor);
             this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(4, 117);
-            this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(4);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 95);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(855, 44);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(734, 31);
             this.flowLayoutPanel2.TabIndex = 5;
             // 
             // btnNeutralOptionColor
@@ -109,10 +106,9 @@
             this.btnNeutralOptionColor.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(244)))));
             this.btnNeutralOptionColor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNeutralOptionColor.ForeColor = System.Drawing.Color.White;
-            this.btnNeutralOptionColor.Location = new System.Drawing.Point(4, 4);
-            this.btnNeutralOptionColor.Margin = new System.Windows.Forms.Padding(4);
+            this.btnNeutralOptionColor.Location = new System.Drawing.Point(3, 3);
             this.btnNeutralOptionColor.Name = "btnNeutralOptionColor";
-            this.btnNeutralOptionColor.Size = new System.Drawing.Size(111, 36);
+            this.btnNeutralOptionColor.Size = new System.Drawing.Size(95, 25);
             this.btnNeutralOptionColor.TabIndex = 1;
             this.btnNeutralOptionColor.Text = "Neutral";
             this.btnNeutralOptionColor.UseVisualStyleBackColor = false;
@@ -129,10 +125,9 @@
             this.btnPositiveOptionColor.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(244)))));
             this.btnPositiveOptionColor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPositiveOptionColor.ForeColor = System.Drawing.Color.White;
-            this.btnPositiveOptionColor.Location = new System.Drawing.Point(123, 4);
-            this.btnPositiveOptionColor.Margin = new System.Windows.Forms.Padding(4);
+            this.btnPositiveOptionColor.Location = new System.Drawing.Point(104, 3);
             this.btnPositiveOptionColor.Name = "btnPositiveOptionColor";
-            this.btnPositiveOptionColor.Size = new System.Drawing.Size(111, 36);
+            this.btnPositiveOptionColor.Size = new System.Drawing.Size(95, 25);
             this.btnPositiveOptionColor.TabIndex = 2;
             this.btnPositiveOptionColor.Text = "Positive";
             this.btnPositiveOptionColor.UseVisualStyleBackColor = false;
@@ -149,10 +144,9 @@
             this.btnNegativeOptionColor.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(244)))));
             this.btnNegativeOptionColor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNegativeOptionColor.ForeColor = System.Drawing.Color.White;
-            this.btnNegativeOptionColor.Location = new System.Drawing.Point(242, 4);
-            this.btnNegativeOptionColor.Margin = new System.Windows.Forms.Padding(4);
+            this.btnNegativeOptionColor.Location = new System.Drawing.Point(205, 3);
             this.btnNegativeOptionColor.Name = "btnNegativeOptionColor";
-            this.btnNegativeOptionColor.Size = new System.Drawing.Size(111, 36);
+            this.btnNegativeOptionColor.Size = new System.Drawing.Size(95, 25);
             this.btnNegativeOptionColor.TabIndex = 3;
             this.btnNegativeOptionColor.Text = "Negative";
             this.btnNegativeOptionColor.UseVisualStyleBackColor = false;
@@ -169,10 +163,9 @@
             this.btnFunctionalOptionColor.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(244)))));
             this.btnFunctionalOptionColor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFunctionalOptionColor.ForeColor = System.Drawing.Color.White;
-            this.btnFunctionalOptionColor.Location = new System.Drawing.Point(361, 4);
-            this.btnFunctionalOptionColor.Margin = new System.Windows.Forms.Padding(4);
+            this.btnFunctionalOptionColor.Location = new System.Drawing.Point(306, 3);
             this.btnFunctionalOptionColor.Name = "btnFunctionalOptionColor";
-            this.btnFunctionalOptionColor.Size = new System.Drawing.Size(111, 36);
+            this.btnFunctionalOptionColor.Size = new System.Drawing.Size(95, 25);
             this.btnFunctionalOptionColor.TabIndex = 4;
             this.btnFunctionalOptionColor.Text = "Functional";
             this.btnFunctionalOptionColor.UseVisualStyleBackColor = false;
@@ -189,10 +182,9 @@
             this.btnSpecialOptionColor.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(244)))));
             this.btnSpecialOptionColor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSpecialOptionColor.ForeColor = System.Drawing.Color.White;
-            this.btnSpecialOptionColor.Location = new System.Drawing.Point(480, 4);
-            this.btnSpecialOptionColor.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSpecialOptionColor.Location = new System.Drawing.Point(407, 3);
             this.btnSpecialOptionColor.Name = "btnSpecialOptionColor";
-            this.btnSpecialOptionColor.Size = new System.Drawing.Size(111, 36);
+            this.btnSpecialOptionColor.Size = new System.Drawing.Size(95, 25);
             this.btnSpecialOptionColor.TabIndex = 5;
             this.btnSpecialOptionColor.Text = "Special";
             this.btnSpecialOptionColor.UseVisualStyleBackColor = false;
@@ -202,20 +194,18 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label3.Location = new System.Drawing.Point(4, 100);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(3, 83);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(110, 17);
+            this.label3.Size = new System.Drawing.Size(101, 12);
             this.label3.TabIndex = 4;
             this.label3.Text = "Option Tag Color";
             // 
             // tbContent
             // 
             this.tbContent.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tbContent.Location = new System.Drawing.Point(4, 77);
-            this.tbContent.Margin = new System.Windows.Forms.Padding(4);
+            this.tbContent.Location = new System.Drawing.Point(3, 62);
             this.tbContent.Name = "tbContent";
-            this.tbContent.Size = new System.Drawing.Size(855, 23);
+            this.tbContent.Size = new System.Drawing.Size(734, 21);
             this.tbContent.TabIndex = 3;
             this.tbContent.Text = "This is a Demo to demonstrate the Dialog functionality.";
             // 
@@ -223,20 +213,18 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label2.Location = new System.Drawing.Point(4, 60);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(3, 50);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 17);
+            this.label2.Size = new System.Drawing.Size(47, 12);
             this.label2.TabIndex = 2;
             this.label2.Text = "Content";
             // 
             // tbTitle
             // 
             this.tbTitle.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tbTitle.Location = new System.Drawing.Point(4, 37);
-            this.tbTitle.Margin = new System.Windows.Forms.Padding(4);
+            this.tbTitle.Location = new System.Drawing.Point(3, 29);
             this.tbTitle.Name = "tbTitle";
-            this.tbTitle.Size = new System.Drawing.Size(855, 23);
+            this.tbTitle.Size = new System.Drawing.Size(734, 21);
             this.tbTitle.TabIndex = 1;
             this.tbTitle.Text = "Dialog Demo";
             // 
@@ -244,11 +232,9 @@
             // 
             this.groupBox2.Controls.Add(this.flowLayoutPanel1);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox2.Location = new System.Drawing.Point(0, 183);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox2.Location = new System.Drawing.Point(0, 129);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox2.Size = new System.Drawing.Size(863, 561);
+            this.groupBox2.Size = new System.Drawing.Size(740, 396);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Dialogs";
@@ -262,11 +248,11 @@
             this.flowLayoutPanel1.Controls.Add(this.btnPromptDialog);
             this.flowLayoutPanel1.Controls.Add(this.btnSelectionDialog);
             this.flowLayoutPanel1.Controls.Add(this.btnMultipleSelectionDialog);
+            this.flowLayoutPanel1.Controls.Add(this.btnbtnDataEntrySheetDialog);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(4, 20);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 17);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(855, 537);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(734, 376);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // btnMessageDialog
@@ -280,10 +266,9 @@
             this.btnMessageDialog.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(244)))));
             this.btnMessageDialog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMessageDialog.ForeColor = System.Drawing.Color.White;
-            this.btnMessageDialog.Location = new System.Drawing.Point(4, 4);
-            this.btnMessageDialog.Margin = new System.Windows.Forms.Padding(4);
+            this.btnMessageDialog.Location = new System.Drawing.Point(3, 3);
             this.btnMessageDialog.Name = "btnMessageDialog";
-            this.btnMessageDialog.Size = new System.Drawing.Size(178, 52);
+            this.btnMessageDialog.Size = new System.Drawing.Size(153, 37);
             this.btnMessageDialog.TabIndex = 0;
             this.btnMessageDialog.Text = "MessageDialog";
             this.btnMessageDialog.UseVisualStyleBackColor = false;
@@ -300,10 +285,9 @@
             this.btnInputDialog.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(244)))));
             this.btnInputDialog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInputDialog.ForeColor = System.Drawing.Color.White;
-            this.btnInputDialog.Location = new System.Drawing.Point(190, 4);
-            this.btnInputDialog.Margin = new System.Windows.Forms.Padding(4);
+            this.btnInputDialog.Location = new System.Drawing.Point(162, 3);
             this.btnInputDialog.Name = "btnInputDialog";
-            this.btnInputDialog.Size = new System.Drawing.Size(178, 52);
+            this.btnInputDialog.Size = new System.Drawing.Size(153, 37);
             this.btnInputDialog.TabIndex = 1;
             this.btnInputDialog.Text = "InputDialog";
             this.btnInputDialog.UseVisualStyleBackColor = false;
@@ -320,10 +304,9 @@
             this.btnInputMultiLineDialog.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(244)))));
             this.btnInputMultiLineDialog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInputMultiLineDialog.ForeColor = System.Drawing.Color.White;
-            this.btnInputMultiLineDialog.Location = new System.Drawing.Point(376, 4);
-            this.btnInputMultiLineDialog.Margin = new System.Windows.Forms.Padding(4);
+            this.btnInputMultiLineDialog.Location = new System.Drawing.Point(321, 3);
             this.btnInputMultiLineDialog.Name = "btnInputMultiLineDialog";
-            this.btnInputMultiLineDialog.Size = new System.Drawing.Size(178, 52);
+            this.btnInputMultiLineDialog.Size = new System.Drawing.Size(153, 37);
             this.btnInputMultiLineDialog.TabIndex = 2;
             this.btnInputMultiLineDialog.Text = "InputDialog(MultiLine)";
             this.btnInputMultiLineDialog.UseVisualStyleBackColor = false;
@@ -340,10 +323,9 @@
             this.btnPasswordDialog.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(244)))));
             this.btnPasswordDialog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPasswordDialog.ForeColor = System.Drawing.Color.White;
-            this.btnPasswordDialog.Location = new System.Drawing.Point(562, 4);
-            this.btnPasswordDialog.Margin = new System.Windows.Forms.Padding(4);
+            this.btnPasswordDialog.Location = new System.Drawing.Point(480, 3);
             this.btnPasswordDialog.Name = "btnPasswordDialog";
-            this.btnPasswordDialog.Size = new System.Drawing.Size(178, 52);
+            this.btnPasswordDialog.Size = new System.Drawing.Size(153, 37);
             this.btnPasswordDialog.TabIndex = 3;
             this.btnPasswordDialog.Text = "PasswordDialog";
             this.btnPasswordDialog.UseVisualStyleBackColor = false;
@@ -360,10 +342,9 @@
             this.btnPromptDialog.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(244)))));
             this.btnPromptDialog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPromptDialog.ForeColor = System.Drawing.Color.White;
-            this.btnPromptDialog.Location = new System.Drawing.Point(4, 64);
-            this.btnPromptDialog.Margin = new System.Windows.Forms.Padding(4);
+            this.btnPromptDialog.Location = new System.Drawing.Point(3, 46);
             this.btnPromptDialog.Name = "btnPromptDialog";
-            this.btnPromptDialog.Size = new System.Drawing.Size(178, 52);
+            this.btnPromptDialog.Size = new System.Drawing.Size(153, 37);
             this.btnPromptDialog.TabIndex = 4;
             this.btnPromptDialog.Text = "PromptDialog";
             this.btnPromptDialog.UseVisualStyleBackColor = false;
@@ -380,10 +361,9 @@
             this.btnSelectionDialog.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(244)))));
             this.btnSelectionDialog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSelectionDialog.ForeColor = System.Drawing.Color.White;
-            this.btnSelectionDialog.Location = new System.Drawing.Point(190, 64);
-            this.btnSelectionDialog.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSelectionDialog.Location = new System.Drawing.Point(162, 46);
             this.btnSelectionDialog.Name = "btnSelectionDialog";
-            this.btnSelectionDialog.Size = new System.Drawing.Size(178, 52);
+            this.btnSelectionDialog.Size = new System.Drawing.Size(153, 37);
             this.btnSelectionDialog.TabIndex = 5;
             this.btnSelectionDialog.Text = "SelectionDialog";
             this.btnSelectionDialog.UseVisualStyleBackColor = false;
@@ -400,24 +380,41 @@
             this.btnMultipleSelectionDialog.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(244)))));
             this.btnMultipleSelectionDialog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMultipleSelectionDialog.ForeColor = System.Drawing.Color.White;
-            this.btnMultipleSelectionDialog.Location = new System.Drawing.Point(376, 64);
-            this.btnMultipleSelectionDialog.Margin = new System.Windows.Forms.Padding(4);
+            this.btnMultipleSelectionDialog.Location = new System.Drawing.Point(321, 46);
             this.btnMultipleSelectionDialog.Name = "btnMultipleSelectionDialog";
-            this.btnMultipleSelectionDialog.Size = new System.Drawing.Size(178, 52);
+            this.btnMultipleSelectionDialog.Size = new System.Drawing.Size(155, 37);
             this.btnMultipleSelectionDialog.TabIndex = 6;
             this.btnMultipleSelectionDialog.Text = "MultipleSelectionDialog";
             this.btnMultipleSelectionDialog.UseVisualStyleBackColor = false;
             this.btnMultipleSelectionDialog.Click += new System.EventHandler(this.btnMultipleSelectionDialog_Click);
             // 
+            // btnbtnDataEntrySheetDialog
+            // 
+            this.btnbtnDataEntrySheetDialog.AutoSize = true;
+            this.btnbtnDataEntrySheetDialog.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btnbtnDataEntrySheetDialog.BorderColor = System.Drawing.Color.Empty;
+            this.btnbtnDataEntrySheetDialog.BorderSize = 1;
+            this.btnbtnDataEntrySheetDialog.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(134)))), ((int)(((byte)(224)))));
+            this.btnbtnDataEntrySheetDialog.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(97)))), ((int)(((byte)(163)))));
+            this.btnbtnDataEntrySheetDialog.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(244)))));
+            this.btnbtnDataEntrySheetDialog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnbtnDataEntrySheetDialog.ForeColor = System.Drawing.Color.White;
+            this.btnbtnDataEntrySheetDialog.Location = new System.Drawing.Point(482, 46);
+            this.btnbtnDataEntrySheetDialog.Name = "btnbtnDataEntrySheetDialog";
+            this.btnbtnDataEntrySheetDialog.Size = new System.Drawing.Size(155, 37);
+            this.btnbtnDataEntrySheetDialog.TabIndex = 7;
+            this.btnbtnDataEntrySheetDialog.Text = "btnDataEntrySheetDialog";
+            this.btnbtnDataEntrySheetDialog.UseVisualStyleBackColor = false;
+            this.btnbtnDataEntrySheetDialog.Click += new System.EventHandler(this.btnDataEntrySheetDialog_Click);
+            // 
             // DialogDemoPanel
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "DialogDemoPanel";
-            this.Size = new System.Drawing.Size(863, 744);
+            this.Size = new System.Drawing.Size(740, 525);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.flowLayoutPanel2.ResumeLayout(false);
@@ -452,5 +449,6 @@
         private Core.Controls.SimpleButton btnNegativeOptionColor;
         private Core.Controls.SimpleButton btnFunctionalOptionColor;
         private Core.Controls.SimpleButton btnSpecialOptionColor;
+        private Core.Controls.SimpleButton btnbtnDataEntrySheetDialog;
     }
 }
