@@ -371,7 +371,8 @@ namespace ApeFree.ApeForms.Demo.DemoPanel
             sheet.AddDateTimeField(new DateTimeField()
             {
                 Title = "生日",
-                Data = DateTime.Now
+                Data = DateTime.Now,
+                DateTimeFormat = "yyyy年 MM月 dd日 hh:mm:ss",
             });
             sheet.AddNumberField(new NumberField()
             {
@@ -407,11 +408,11 @@ namespace ApeFree.ApeForms.Demo.DemoPanel
             var dialog = provider.CreateDataEntrySheetDialog(sheet, new DataEntrySheetDialogSettings().With(s =>
             {
                 // 标题文本
-                s.Title = "标题文本";
+                s.Title = tbTitle.Text;
                 // 消息文本
-                s.Content = "消息文本";
+                s.Content = tbContent.Text;
                 // 窗体尺寸
-                s.DialogSize = new Size(450, 600);
+                s.DialogSize = new Size(450, 700);
 
                 s.PrecheckResult = sht =>
                 {
