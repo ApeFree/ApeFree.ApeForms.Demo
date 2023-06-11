@@ -367,6 +367,15 @@ namespace ApeFree.ApeForms.Demo.DemoPanel
             {
                 Title = "密码",
                 Data = "12345",
+                ValidityCheckHandler = psw =>
+                {
+                    if (psw.Length < 6)
+                    {
+                        Toast.Show("密码至少6位");
+                        return false;
+                    }
+                    return true;
+                },
             });
             sheet.AddDateTimeField(new DateTimeField()
             {
@@ -405,7 +414,7 @@ namespace ApeFree.ApeForms.Demo.DemoPanel
                 IsMultiline = true
             });
 
-            var dialog = provider.CreateDataEntrySheetDialog(sheet, new DataEntrySheetDialogSettings().With(s =>
+            var dialog = provider.CreateDataEntrySheetDialog(sheet,s =>
             {
                 // 标题文本
                 s.Title = tbTitle.Text;
@@ -413,12 +422,18 @@ namespace ApeFree.ApeForms.Demo.DemoPanel
                 s.Content = tbContent.Text;
                 // 窗体尺寸
                 s.DialogSize = new Size(450, 700);
-
+                // 预校验提交结果
                 s.PrecheckResult = sht =>
                 {
-                    if (((string)sht["密码"].Data).Length < 6)
+                    // 可以在此处进行数据检查，也可以在字段属性里设置数据有效性检查的回调。
+                    // 区别是：
+                    // 1. 在此处进行检查需要从表单中查找到属性然后强转格式。但可以检查多个字段相关联的数据。
+                    // 2. 在字段中设置检查回调可以直接拿到对应的数据类型，由于是设置在表单中，
+                    //    因此这部分的设置可以跟随表单一起使用（避免同一个表单在不同地方使用都需要在Dialog中写一遍格式检查的回调）。
+
+                    if (((string)sht["户籍"].Data) == "不确定")
                     {
-                        Toast.Show("密码至少6位", 2000, null, ToastMode.Reuse);
+                        Toast.Show("户籍类型不可选择“不确定”", 2000, null, ToastMode.Reuse);
                         return false;
                     }
 
@@ -430,7 +445,7 @@ namespace ApeFree.ApeForms.Demo.DemoPanel
 
                     return true;
                 };
-            }), null);
+            }, null);
             dialog.Show();
             if (dialog.Result.IsCancel)
             {
@@ -502,6 +517,7 @@ namespace ApeFree.ApeForms.Demo.DemoPanel
             public string Name { get; set; }
             public string Description { get; set; }
         }
+
 
     }
 }
