@@ -75,18 +75,26 @@ namespace ApeFree.ApeForms.Demo
             foreach (NavigationBarData data in nav.Reverse())
             {
                 SimpleButtonShutter shutter = new SimpleButtonShutter();
+                shutter.ButtonGroupId = byte.MaxValue;
                 shutter.MainControl.Text = data.Name;
                 shutter.MainControl.BackColor = Color.FromArgb(30, 20, 50);
                 shutter.MainControl.ForeColor = Color.FromArgb(245, 245, 245);
 
                 foreach (var kv in data.Reverse())
                 {
+                    // 添加一个二级选项
                     var btn = shutter.AddChildButton(kv.Key, (s, args) =>
                     {
+                        // 单击此二级选项后打开对应页面
                         slideTabControl.AddPage(kv.Key, kv.Value.Value, (data.Icon ?? this.Icon).ToBitmap());
                     });
+                    // 设置单个按钮的前景色和背景色
                     btn.BackColor = Color.FromArgb(70, 55, 100);
                     btn.ForeColor = Color.FromArgb(245, 245, 245);
+                    // 设置单个按钮选中时的边线颜色、边线宽度和背景色
+                    btn.SidelineColor = Color.PaleVioletRed;
+                    btn.SidelineWidth = 8;
+                    btn.SelectedBackColor = btn.BackColor.Luminance(1.2f); // 选中状态下按钮增亮20%   
                 }
                 controlListBox.AddItem(shutter);
             }
