@@ -50,6 +50,7 @@
             this.btnSelectionDialog = new ApeFree.ApeForms.Core.Controls.SimpleButton();
             this.btnMultipleSelectionDialog = new ApeFree.ApeForms.Core.Controls.SimpleButton();
             this.btnDataEntrySheetDialog = new ApeFree.ApeForms.Core.Controls.SimpleButton();
+            this.btnDateTimeDialog = new ApeFree.ApeForms.Core.Controls.SimpleButton();
             this.groupBox1.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -249,6 +250,7 @@
             this.flowLayoutPanel1.Controls.Add(this.btnSelectionDialog);
             this.flowLayoutPanel1.Controls.Add(this.btnMultipleSelectionDialog);
             this.flowLayoutPanel1.Controls.Add(this.btnDataEntrySheetDialog);
+            this.flowLayoutPanel1.Controls.Add(this.btnDateTimeDialog);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 17);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
@@ -407,6 +409,25 @@
             this.btnDataEntrySheetDialog.UseVisualStyleBackColor = false;
             this.btnDataEntrySheetDialog.Click += new System.EventHandler(this.btnDataEntrySheetDialog_Click);
             // 
+            // btnDateTimeDialog
+            // 
+            this.btnDateTimeDialog.AutoSize = true;
+            this.btnDateTimeDialog.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btnDateTimeDialog.BorderColor = System.Drawing.Color.Empty;
+            this.btnDateTimeDialog.BorderSize = 1;
+            this.btnDateTimeDialog.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(134)))), ((int)(((byte)(224)))));
+            this.btnDateTimeDialog.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(97)))), ((int)(((byte)(163)))));
+            this.btnDateTimeDialog.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(244)))));
+            this.btnDateTimeDialog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDateTimeDialog.ForeColor = System.Drawing.Color.White;
+            this.btnDateTimeDialog.Location = new System.Drawing.Point(3, 89);
+            this.btnDateTimeDialog.Name = "btnDateTimeDialog";
+            this.btnDateTimeDialog.Size = new System.Drawing.Size(155, 37);
+            this.btnDateTimeDialog.TabIndex = 8;
+            this.btnDateTimeDialog.Text = "DateTimeDialog";
+            this.btnDateTimeDialog.UseVisualStyleBackColor = false;
+            this.btnDateTimeDialog.Click += new System.EventHandler(this.btnDateTimeDialog_Click);
+            // 
             // DialogDemoPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -450,5 +471,6 @@
         private Core.Controls.SimpleButton btnFunctionalOptionColor;
         private Core.Controls.SimpleButton btnSpecialOptionColor;
         private Core.Controls.SimpleButton btnDataEntrySheetDialog;
+        private Core.Controls.SimpleButton btnDateTimeDialog;
     }
 }

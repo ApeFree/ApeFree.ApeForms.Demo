@@ -443,6 +443,38 @@ namespace ApeFree.ApeForms.Demo.DemoPanel
             }
         }
 
+        private void btnDateTimeDialog_Click(object sender, EventArgs e)
+        {
+            var dialog = provider.CreateDateTimeDialog(s =>
+            {
+                // 标题文本
+                s.Title = tbTitle.Text;
+                // 消息文本
+                s.Content = tbContent.Text;
+                // 默认时间
+                s.DefaultDateTime = new DateTime(2008,8,8);
+                // 是否可取消
+                s.Cancelable = true;
+                // 确认按钮文本
+                s.ConfirmOption.Text = "Confirm(确定)";
+                // 取消按钮文本
+                s.CancelOption.Text = "Cancel(取消)";
+                // 清空按钮文本
+                s.CurrentTimeOption.Text = "Now(当前)";
+            });
+
+            dialog.Show();
+
+            if (dialog.Result.IsCancel)
+            {
+                Toast.Show("取消选择");
+            }
+            else
+            {
+                Toast.Show($"选择时间为：{dialog.Result.Data}");
+            }
+        }
+
         private void btnOptionColor_Click(object sender, EventArgs e)
         {
             var btn = sender as Control;
