@@ -46,6 +46,7 @@
             // 
             // simpleButtonShutter1
             // 
+            this.simpleButtonShutter1.ButtonGroupId = ((byte)(1));
             this.simpleButtonShutter1.Location = new System.Drawing.Point(6, 20);
             this.simpleButtonShutter1.Name = "simpleButtonShutter1";
             this.simpleButtonShutter1.OpenState = false;
