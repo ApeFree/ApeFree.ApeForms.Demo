@@ -270,9 +270,9 @@
             this.btnMessageDialog.ForeColor = System.Drawing.Color.White;
             this.btnMessageDialog.Location = new System.Drawing.Point(3, 3);
             this.btnMessageDialog.Name = "btnMessageDialog";
-            this.btnMessageDialog.Size = new System.Drawing.Size(153, 37);
+            this.btnMessageDialog.Size = new System.Drawing.Size(167, 37);
             this.btnMessageDialog.TabIndex = 0;
-            this.btnMessageDialog.Text = "MessageDialog";
+            this.btnMessageDialog.Text = "MessageDialog(消息提示)";
             this.btnMessageDialog.UseVisualStyleBackColor = false;
             this.btnMessageDialog.Click += new System.EventHandler(this.btnMessageDialog_Click);
             // 
@@ -287,11 +287,11 @@
             this.btnInputDialog.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(244)))));
             this.btnInputDialog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInputDialog.ForeColor = System.Drawing.Color.White;
-            this.btnInputDialog.Location = new System.Drawing.Point(162, 3);
+            this.btnInputDialog.Location = new System.Drawing.Point(176, 3);
             this.btnInputDialog.Name = "btnInputDialog";
-            this.btnInputDialog.Size = new System.Drawing.Size(153, 37);
+            this.btnInputDialog.Size = new System.Drawing.Size(179, 37);
             this.btnInputDialog.TabIndex = 1;
-            this.btnInputDialog.Text = "InputDialog";
+            this.btnInputDialog.Text = "InputDialog(文本输入)";
             this.btnInputDialog.UseVisualStyleBackColor = false;
             this.btnInputDialog.Click += new System.EventHandler(this.btnInputDialog_Click);
             // 
@@ -306,11 +306,11 @@
             this.btnInputMultiLineDialog.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(244)))));
             this.btnInputMultiLineDialog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInputMultiLineDialog.ForeColor = System.Drawing.Color.White;
-            this.btnInputMultiLineDialog.Location = new System.Drawing.Point(321, 3);
+            this.btnInputMultiLineDialog.Location = new System.Drawing.Point(361, 3);
             this.btnInputMultiLineDialog.Name = "btnInputMultiLineDialog";
-            this.btnInputMultiLineDialog.Size = new System.Drawing.Size(153, 37);
+            this.btnInputMultiLineDialog.Size = new System.Drawing.Size(221, 37);
             this.btnInputMultiLineDialog.TabIndex = 2;
-            this.btnInputMultiLineDialog.Text = "InputDialog(MultiLine)";
+            this.btnInputMultiLineDialog.Text = "MultiLineInputDialog(多行文本输入)";
             this.btnInputMultiLineDialog.UseVisualStyleBackColor = false;
             this.btnInputMultiLineDialog.Click += new System.EventHandler(this.btnInputMultiLineDialog_Click);
             // 
@@ -325,11 +325,11 @@
             this.btnPasswordDialog.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(244)))));
             this.btnPasswordDialog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPasswordDialog.ForeColor = System.Drawing.Color.White;
-            this.btnPasswordDialog.Location = new System.Drawing.Point(480, 3);
+            this.btnPasswordDialog.Location = new System.Drawing.Point(3, 46);
             this.btnPasswordDialog.Name = "btnPasswordDialog";
-            this.btnPasswordDialog.Size = new System.Drawing.Size(153, 37);
+            this.btnPasswordDialog.Size = new System.Drawing.Size(161, 37);
             this.btnPasswordDialog.TabIndex = 3;
-            this.btnPasswordDialog.Text = "PasswordDialog";
+            this.btnPasswordDialog.Text = "PasswordDialog(密码输入)";
             this.btnPasswordDialog.UseVisualStyleBackColor = false;
             this.btnPasswordDialog.Click += new System.EventHandler(this.btnPasswordDialog_Click);
             // 
@@ -344,11 +344,11 @@
             this.btnPromptDialog.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(244)))));
             this.btnPromptDialog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPromptDialog.ForeColor = System.Drawing.Color.White;
-            this.btnPromptDialog.Location = new System.Drawing.Point(3, 46);
+            this.btnPromptDialog.Location = new System.Drawing.Point(170, 46);
             this.btnPromptDialog.Name = "btnPromptDialog";
             this.btnPromptDialog.Size = new System.Drawing.Size(153, 37);
             this.btnPromptDialog.TabIndex = 4;
-            this.btnPromptDialog.Text = "PromptDialog";
+            this.btnPromptDialog.Text = "PromptDialog(选择提示)";
             this.btnPromptDialog.UseVisualStyleBackColor = false;
             this.btnPromptDialog.Click += new System.EventHandler(this.btnPromptDialog_Click);
             // 
@@ -363,11 +363,11 @@
             this.btnSelectionDialog.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(244)))));
             this.btnSelectionDialog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSelectionDialog.ForeColor = System.Drawing.Color.White;
-            this.btnSelectionDialog.Location = new System.Drawing.Point(162, 46);
+            this.btnSelectionDialog.Location = new System.Drawing.Point(329, 46);
             this.btnSelectionDialog.Name = "btnSelectionDialog";
-            this.btnSelectionDialog.Size = new System.Drawing.Size(153, 37);
+            this.btnSelectionDialog.Size = new System.Drawing.Size(167, 37);
             this.btnSelectionDialog.TabIndex = 5;
-            this.btnSelectionDialog.Text = "SelectionDialog";
+            this.btnSelectionDialog.Text = "SelectionDialog(单项选择)";
             this.btnSelectionDialog.UseVisualStyleBackColor = false;
             this.btnSelectionDialog.Click += new System.EventHandler(this.btnSelectionDialog_Click);
             // 
@@ -382,11 +382,11 @@
             this.btnMultipleSelectionDialog.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(244)))));
             this.btnMultipleSelectionDialog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMultipleSelectionDialog.ForeColor = System.Drawing.Color.White;
-            this.btnMultipleSelectionDialog.Location = new System.Drawing.Point(321, 46);
+            this.btnMultipleSelectionDialog.Location = new System.Drawing.Point(502, 46);
             this.btnMultipleSelectionDialog.Name = "btnMultipleSelectionDialog";
-            this.btnMultipleSelectionDialog.Size = new System.Drawing.Size(155, 37);
+            this.btnMultipleSelectionDialog.Size = new System.Drawing.Size(215, 37);
             this.btnMultipleSelectionDialog.TabIndex = 6;
-            this.btnMultipleSelectionDialog.Text = "MultipleSelectionDialog";
+            this.btnMultipleSelectionDialog.Text = "MultipleSelectionDialog(多项选择)";
             this.btnMultipleSelectionDialog.UseVisualStyleBackColor = false;
             this.btnMultipleSelectionDialog.Click += new System.EventHandler(this.btnMultipleSelectionDialog_Click);
             // 
@@ -401,11 +401,11 @@
             this.btnDataEntrySheetDialog.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(244)))));
             this.btnDataEntrySheetDialog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDataEntrySheetDialog.ForeColor = System.Drawing.Color.White;
-            this.btnDataEntrySheetDialog.Location = new System.Drawing.Point(482, 46);
+            this.btnDataEntrySheetDialog.Location = new System.Drawing.Point(3, 89);
             this.btnDataEntrySheetDialog.Name = "btnDataEntrySheetDialog";
-            this.btnDataEntrySheetDialog.Size = new System.Drawing.Size(155, 37);
+            this.btnDataEntrySheetDialog.Size = new System.Drawing.Size(197, 37);
             this.btnDataEntrySheetDialog.TabIndex = 7;
-            this.btnDataEntrySheetDialog.Text = "DataEntrySheetDialog";
+            this.btnDataEntrySheetDialog.Text = "DataEntrySheetDialog(表单录入)";
             this.btnDataEntrySheetDialog.UseVisualStyleBackColor = false;
             this.btnDataEntrySheetDialog.Click += new System.EventHandler(this.btnDataEntrySheetDialog_Click);
             // 
@@ -420,11 +420,11 @@
             this.btnDateTimeDialog.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(244)))));
             this.btnDateTimeDialog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDateTimeDialog.ForeColor = System.Drawing.Color.White;
-            this.btnDateTimeDialog.Location = new System.Drawing.Point(3, 89);
+            this.btnDateTimeDialog.Location = new System.Drawing.Point(206, 89);
             this.btnDateTimeDialog.Name = "btnDateTimeDialog";
-            this.btnDateTimeDialog.Size = new System.Drawing.Size(155, 37);
+            this.btnDateTimeDialog.Size = new System.Drawing.Size(161, 37);
             this.btnDateTimeDialog.TabIndex = 8;
-            this.btnDateTimeDialog.Text = "DateTimeDialog";
+            this.btnDateTimeDialog.Text = "DateTimeDialog(日期选择)";
             this.btnDateTimeDialog.UseVisualStyleBackColor = false;
             this.btnDateTimeDialog.Click += new System.EventHandler(this.btnDateTimeDialog_Click);
             // 
