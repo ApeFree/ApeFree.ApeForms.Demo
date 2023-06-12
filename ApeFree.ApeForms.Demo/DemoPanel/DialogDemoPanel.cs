@@ -98,12 +98,8 @@ namespace ApeFree.ApeForms.Demo.DemoPanel
                 s.DefaultText = "You can set the default text in the input box by using the 'DefaultText' property.";
                 // 是否可取消
                 s.Cancelable = true;
-                // 是否允许输入为空
-                s.AllowEmpty = false;
                 // 输入文本最大长度
                 s.MaximumLength = 200;
-                // 输入文本最小长度
-                s.MinimumLength = 6;
                 // 是否多行
                 s.IsMultiline = false;
                 // 确认按钮文本
@@ -148,12 +144,8 @@ namespace ApeFree.ApeForms.Demo.DemoPanel
                 s.DefaultText = "You can set the default text in the input box by using the 'DefaultText' property.";
                 // 是否可取消
                 s.Cancelable = true;
-                // 是否允许输入为空
-                s.AllowEmpty = false;
                 // 输入文本最大长度
                 s.MaximumLength = 200;
-                // 输入文本最小长度
-                s.MinimumLength = 6;
                 // 是否多行
                 s.IsMultiline = true;
                 // 确认按钮文本
@@ -191,9 +183,9 @@ namespace ApeFree.ApeForms.Demo.DemoPanel
             var dialog = provider.CreatePasswordDialog(s =>
             {
                 s.Title = tbTitle.Text;
-                s.Content = tbContent.Text + $"\r\n提示：密码至少要[6]位";
+                s.Content = tbContent.Text;
                 s.PasswordChar = '●';
-                s.PrecheckResult = password => password != null && password.Length >= 6;
+                s.PrecheckResult = password => new FormatCheckResult(password != null && password.Length >= 6, "密码至少要[6]位");
             });
 
             dialog.Show();
@@ -271,15 +263,8 @@ namespace ApeFree.ApeForms.Demo.DemoPanel
                 // 消息文本
                 s.Content = tbContent.Text;
                 // 设置预检查回调
-                s.PrecheckResult = item =>
-                    {
-                        var b = item != null;
-                        if (!b)
-                        {
-                            Toast.Show("至少要选一项哦！", 2000, null, ToastMode.Reuse);
-                        }
-                        return b;
-                    };
+                s.PrecheckResult = item => new FormatCheckResult(item != null, "至少要选一项哦！");
+
                 s.ItemDisplayTextConvertCallback = stu => $"{stu.Name} ({stu.Description})";
             });
 
@@ -330,15 +315,8 @@ namespace ApeFree.ApeForms.Demo.DemoPanel
                 // 消息文本
                 s.Content = tbContent.Text;
                 // 设置预检查回调
-                s.PrecheckResult = item =>
-                {
-                    var b = item.Any();
-                    if (!b)
-                    {
-                        Toast.Show("至少要选一项哦！", 2000, null, ToastMode.Reuse);
-                    }
-                    return b;
-                };
+                s.PrecheckResult = item => new FormatCheckResult(item.Any(), "至少要选一项哦！");
+
                 s.ItemDisplayTextConvertCallback = stu => $"{stu.Name} ({stu.Description})";
             });
 
@@ -367,21 +345,19 @@ namespace ApeFree.ApeForms.Demo.DemoPanel
             {
                 Title = "密码",
                 Data = "12345",
-                ValidityCheckHandler = psw =>
+                ValidityCheckHandler = str =>
                 {
-                    if (psw.Length < 6)
+                    if (str.Length < 6)
                     {
-                        Toast.Show("密码至少6位");
-                        return false;
+                        return new FormatCheckResult("密码至少6位");
                     }
-                    return true;
+                    return FormatCheckResult.Success;
                 },
             });
             sheet.AddDateTimeField(new DateTimeField()
             {
                 Title = "生日",
-                Data = DateTime.Now,
-                DateTimeFormat = "yyyy年 MM月 dd日 hh:mm:ss",
+                Data = DateTime.Now
             });
             sheet.AddNumberField(new NumberField()
             {
@@ -391,9 +367,21 @@ namespace ApeFree.ApeForms.Demo.DemoPanel
                 Maximum = 120,
                 Minimum = 0,
             });
-            sheet.AddFilePathField(new FilePathField()
+            sheet.AddPicturePathField(new PicturePathField()
             {
                 Title = "照片",
+                BrowseButtonText = "选择照片...",
+            });
+            sheet.AddFilePathField(new FilePathField()
+            {
+                Title = "附件",
+                BrowseButtonText = "选择附件...",
+            });
+            sheet.AddComboBoxField(new ComboBoxField()
+            {
+                Title = "学历",
+                Items = new[] { "高中及以下", "大专", "本科", "硕士研究生", "博士研究生" },
+                Data = "高中及以下",
             });
             sheet.AddSingleChoiceField(new SingleChoiceField()
             {
@@ -414,7 +402,7 @@ namespace ApeFree.ApeForms.Demo.DemoPanel
                 IsMultiline = true
             });
 
-            var dialog = provider.CreateDataEntrySheetDialog(sheet,s =>
+            var dialog = provider.CreateDataEntrySheetDialog(sheet, s =>
             {
                 // 标题文本
                 s.Title = tbTitle.Text;
@@ -433,17 +421,15 @@ namespace ApeFree.ApeForms.Demo.DemoPanel
 
                     if (((string)sht["户籍"].Data) == "不确定")
                     {
-                        Toast.Show("户籍类型不可选择“不确定”", 2000, null, ToastMode.Reuse);
-                        return false;
+                        return new FormatCheckResult("户籍类型不可选择“不确定”");
                     }
 
                     if (!((object[])sht["特长"].Data).Any())
                     {
-                        Toast.Show("至少选择一个特长", 2000, null, ToastMode.Reuse);
-                        return false;
+                        return new FormatCheckResult("至少选择一个特长");
                     }
 
-                    return true;
+                    return FormatCheckResult.Success;
                 };
             }, null);
             dialog.Show();
@@ -467,7 +453,7 @@ namespace ApeFree.ApeForms.Demo.DemoPanel
                 // 消息文本
                 s.Content = tbContent.Text;
                 // 默认时间
-                s.DefaultDateTime = new DateTime(2008,8,8);
+                s.DefaultDateTime = new DateTime(2008, 8, 8);
                 // 是否可取消
                 s.Cancelable = true;
                 // 确认按钮文本
