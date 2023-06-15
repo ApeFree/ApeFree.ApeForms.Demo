@@ -63,9 +63,9 @@ namespace ApeFree.ApeForms.Demo.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap ApeForms_LOGO {
+        internal static System.Drawing.Bitmap ApeForms_Logo {
             get {
-                object obj = ResourceManager.GetObject("ApeForms LOGO", resourceCulture);
+                object obj = ResourceManager.GetObject("ApeForms_Logo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
