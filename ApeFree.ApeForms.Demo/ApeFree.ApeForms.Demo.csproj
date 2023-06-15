@@ -36,17 +36,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>ApeFree_48px.ico</ApplicationIcon>
+    <ApplicationIcon>ApeFree_Icon_64px.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ApeFree.ApeDialogs, Version=0.10.13.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\ApeFree.ApeDialogs.0.10.13-beta0613\lib\net45\ApeFree.ApeDialogs.dll</HintPath>
+    <Reference Include="ApeFree.ApeDialogs, Version=0.10.14.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ApeFree.ApeDialogs.0.10.14\lib\net45\ApeFree.ApeDialogs.dll</HintPath>
     </Reference>
-    <Reference Include="ApeFree.ApeForms.Core, Version=0.10.13.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\ApeFree.ApeForms.Core.0.10.13-beta0613\lib\net461\ApeFree.ApeForms.Core.dll</HintPath>
+    <Reference Include="ApeFree.ApeForms.Core, Version=0.10.14.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ApeFree.ApeForms.Core.0.10.14\lib\net461\ApeFree.ApeForms.Core.dll</HintPath>
     </Reference>
-    <Reference Include="ApeFree.ApeForms.Forms, Version=0.10.13.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\ApeFree.ApeForms.Forms.0.10.13-beta0613\lib\net461\ApeFree.ApeForms.Forms.dll</HintPath>
+    <Reference Include="ApeFree.ApeForms.Forms, Version=0.10.14.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ApeFree.ApeForms.Forms.0.10.14\lib\net461\ApeFree.ApeForms.Forms.dll</HintPath>
     </Reference>
     <Reference Include="Costura, Version=5.7.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Costura.Fody.5.7.0\lib\netstandard1.0\Costura.dll</HintPath>
@@ -278,7 +278,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ApeFree_48px.ico" />
+    <None Include="Resources\ApeForms_Logo.png" />
     <None Include="Resources\ImageButton_13.png" />
     <None Include="Resources\ImageButton_12.png" />
     <None Include="Resources\ImageButton_11.png" />
@@ -297,6 +297,9 @@
     <None Include="Resources\Magent_10.png" />
     <None Include="Resources\Magent_01.png" />
     <None Include="Resources\ApeForms LOGO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ApeFree_Icon_64px.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Fody.6.5.5\build\Fody.targets" Condition="Exists('..\packages\Fody.6.5.5\build\Fody.targets')" />
