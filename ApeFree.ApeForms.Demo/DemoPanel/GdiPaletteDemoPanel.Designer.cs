@@ -54,6 +54,8 @@
             // 
             // panelCanvas
             // 
+            this.panelCanvas.BackgroundImage = global::ApeFree.ApeForms.Demo.Properties.Resources.Magnet_12;
+            this.panelCanvas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.panelCanvas.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelCanvas.Location = new System.Drawing.Point(3, 17);
             this.panelCanvas.Name = "panelCanvas";
