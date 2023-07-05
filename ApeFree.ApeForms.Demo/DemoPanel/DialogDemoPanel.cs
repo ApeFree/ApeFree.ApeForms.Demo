@@ -439,8 +439,14 @@ namespace ApeFree.ApeForms.Demo.DemoPanel
             }
             else
             {
-                var lines = dialog.Result.Data.Fields.Select(p => $"{p.Title}：\t{p.Data}");
+                var lines = sheet.Fields.Select(p => $"{p.Title}：\t{p.Data}");
                 Toast.Show($"{lines.Join("\r\n")}", 2000, null, ToastMode.Reuse);
+
+                // Tips: 读取单个字段的数据可以通过以下方法
+                // 方法1：通过字段标题查找
+                // var str1 = sheet["简介"].Data.ToString();
+                // 方法2：通过字段序号查找
+                // var str2 = sheet[9].Data.ToString();
             }
         }
 
