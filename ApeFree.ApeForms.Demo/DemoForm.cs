@@ -55,7 +55,8 @@ namespace ApeFree.ApeForms.Demo
             },
             new NavigationBarData("GDI+")
             {
-                {"GdiPalette",new Lazy<Control>(()=>new GdiPaletteDemoPanel()) },
+                {"Gdi+ Clock",new Lazy<Control>(()=>new GdiPaletteClockDemoPanel()) },
+                {"Gdi+ RadarChart",new Lazy<Control>(()=>new GdiPaletteRadarChartDemoPanel()) },
             },
         };
 
