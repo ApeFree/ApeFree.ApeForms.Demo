@@ -14,7 +14,7 @@ using System.Windows.Forms;
 
 namespace ApeFree.ApeForms.Demo.DemoPanel
 {
-    public partial class GdiPaletteDemoPanel : UserControl
+    public partial class GdiPaletteClockDemoPanel : UserControl
     {
         // 表盘中心点
         private Point centralPoint = new Point(200, 200);
@@ -35,7 +35,7 @@ namespace ApeFree.ApeForms.Demo.DemoPanel
         /// </summary>
         private Control ctrlCanvas => panelCanvas;
 
-        public GdiPaletteDemoPanel()
+        public GdiPaletteClockDemoPanel()
         {
             InitializeComponent();
 

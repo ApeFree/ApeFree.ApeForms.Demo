@@ -1,6 +1,6 @@
 ﻿namespace ApeFree.ApeForms.Demo.DemoPanel
 {
-    partial class GdiPaletteDemoPanel
+    partial class GdiPaletteClockDemoPanel
     {
         /// <summary> 
         /// 必需的设计器变量。
