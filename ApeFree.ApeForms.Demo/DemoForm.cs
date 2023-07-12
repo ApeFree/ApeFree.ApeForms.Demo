@@ -1,11 +1,11 @@
-﻿using ApeFree.ApeDialogs.Settings;
-using ApeFree.ApeForms.Core.Controls;
+﻿using ApeFree.ApeForms.Core.Controls;
 using ApeFree.ApeForms.Demo.DemoPanel;
-using ApeFree.ApeForms.Forms.Dialogs;
+using ApeFree.ApeForms.Demo.Properties;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -14,128 +14,71 @@ using System.Windows.Forms;
 
 namespace ApeFree.ApeForms.Demo
 {
-    public partial class DemoForm : Form
+    public partial class DemoForm : TemplateForm
     {
-        // 导航栏数据
-        private NavigationBarData[] nav = new NavigationBarData[]
-        {
-            new NavigationBarData("Button")
-            {
-                {"Button",new Lazy<Control>(()=>new ButtonDemoPanel()) },
-            },
-            new NavigationBarData("DatePicker")
-            {
-                {"DatePicker",new Lazy<Control>(()=>new DatePickerDemoPanel()) },
-            },
-            new NavigationBarData("Card")
-            {
-                {"Magnet",new Lazy<Control>(()=>new MagnetDemoPanel()) },
-                {"SimpleCard",new Lazy<Control>(()=>new SimpleCardDemoPanel()) },
-            },
-            new NavigationBarData("Container")
-            {
-                {"ControlListBox",new Lazy<Control>(()=>new ControlListBoxDemoPanel()) },
-                {"SlideBox",new Lazy<Control>(()=>new SlideBoxDemoPanel()) },
-                {"Shutter(preview)",new Lazy<Control>(()=>new ShutterDemoPanel()) },
-            },
-            new NavigationBarData("Notifications")
-            {
-                {"Toast",new Lazy<Control>(()=>new ToastDemoPanel()) },
-                {"Notification",new Lazy<Control>(()=>new NotificationBoxDemoPanel()) },
-            },
-            new NavigationBarData("Dialogs")
-            {
-                {"ApeDialogs",new Lazy<Control>(()=>new DialogDemoPanel()) },
-            },
-
-            new NavigationBarData("Extensions")
-            {
-                {"Form",new Lazy<Control>(()=>new FormExtensionDemoPanel()) },
-                {"GradualChange",new Lazy<Control>(()=>new GradualChangeExtensionDemoPanel()) },
-            },
-            new NavigationBarData("GDI+")
-            {
-                {"Gdi+ Clock",new Lazy<Control>(()=>new GdiPaletteClockDemoPanel()) },
-                {"Gdi+ RadarChart",new Lazy<Control>(()=>new GdiPaletteRadarChartDemoPanel()) },
-            },
-        };
-
         public DemoForm()
         {
             InitializeComponent();
 
-            Text = $"{ProductName} - V{ProductVersion}";
-        }
+            LogoImage = Resources.ApeForms_Logo;
 
-        private void DemoForm_Load(object sender, EventArgs e)
-        {
-            // 修改关闭选项名称
-            slideTabControl.CloseAllPagesOptionText = "全部关闭";
-            slideTabControl.ClosePageOptionText = "关闭";
-
-            foreach (NavigationBarData data in nav.Reverse())
+            SideNavData = new List<NavBarGroup>
             {
-                SimpleButtonShutter shutter = new SimpleButtonShutter();
-                shutter.ButtonGroupId = byte.MaxValue;
-                shutter.MainControl.Text = data.Name;
-                shutter.MainControl.BackColor = Color.FromArgb(30, 20, 50);
-                shutter.MainControl.ForeColor = Color.FromArgb(245, 245, 245);
-
-                foreach (var kv in data.Reverse())
+                new NavBarGroup("Button")
                 {
-                    // 添加一个二级选项
-                    var btn = shutter.AddChildButton(kv.Key, (s, args) =>
-                    {
-                        // 单击此二级选项后打开对应页面
-                        slideTabControl.AddPage(kv.Key, kv.Value.Value, (data.Icon ?? this.Icon).ToBitmap());
-                    });
-                    // 设置单个按钮的前景色和背景色
-                    btn.BackColor = Color.FromArgb(70, 55, 100);
-                    btn.ForeColor = Color.FromArgb(245, 245, 245);
-                    // 设置单个按钮选中时的边线颜色、边线宽度和背景色
-                    btn.SidelineColor = Color.PaleVioletRed;
-                    btn.SidelineWidth = 8;
-                    btn.SelectedBackColor = btn.BackColor.Luminance(1.2f); // 选中状态下按钮增亮20%   
-                }
-                controlListBox.AddItem(shutter);
-            }
+                    new NavItem ("Button",typeof(ButtonDemoPanel) ),
+                },
+                new NavBarGroup("DatePicker")
+                {
+                    new NavItem("DatePicker", typeof(DatePickerDemoPanel)),
+                },
+                new NavBarGroup("Card")
+                {
+                    new NavItem("Magnet", typeof(MagnetDemoPanel)),
+                    new NavItem("SimpleCard", typeof(SimpleCardDemoPanel)),
+                },
+                new NavBarGroup("Container")
+                {
+                    new NavItem("ControlListBox", typeof(ControlListBoxDemoPanel)),
+                    new NavItem("SlideBox", typeof(SlideBoxDemoPanel)),
+                    new NavItem("Shutter(preview)", typeof(ShutterDemoPanel)),
+                },
+                new NavBarGroup("Notifications")
+                {
+                        new NavItem("Toast", typeof(ToastDemoPanel)),
+                    new NavItem("Notification", typeof(NotificationBoxDemoPanel)),
+                },
+                new NavBarGroup("Dialogs")
+                {
+                    new NavItem("ApeDialogs", typeof(DialogDemoPanel)),
+                },
+
+                new NavBarGroup("Extensions")
+                {
+                    new NavItem("Form", typeof(FormExtensionDemoPanel)),
+                    new NavItem("GradualChange", typeof(GradualChangeExtensionDemoPanel)),
+                },
+                new NavBarGroup("GdiPalette")
+                {
+                    new NavItem("Clock", typeof(GdiPaletteClockDemoPanel)),
+                    new NavItem("RadarChart", typeof(GdiPaletteRadarChartDemoPanel)),
+                },
+            };
         }
 
-        private void labBlog_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        protected override void LoadBottomBar(ControlListBox bottomBar)
         {
-            System.Diagnostics.Process.Start("https://blog.csdn.net/lgj123xj");
-        }
+            base.LoadBottomBar(bottomBar);
 
-        private void btnDocument_Click(object sender, EventArgs e)
-        {
-            System.Diagnostics.Process.Start("https://blog.csdn.net/lgj123xj/category_11811822.html");
-        }
+            var linklab = new LinkLabel() { Text = "博客主页", AutoSize = false, Size = new Size(0, 15), TextAlign = ContentAlignment.MiddleCenter };
+            var labContactUs = new Label() { Text = "QQ交流群: 929371169", AutoSize = false, Size = new Size(0, 15), TextAlign = ContentAlignment.MiddleCenter };
+            var labCopyright = new Label() { Text = "Copyright © 2022-2023 Landriesnidis", AutoSize = false, Size = new Size(0, 15), TextAlign = ContentAlignment.MiddleCenter };
 
-        private void btnGithub_Click(object sender, EventArgs e)
-        {
-            System.Diagnostics.Process.Start("https://github.com/ApeFree/ApeFree.ApeForms");
-        }
+            linklab.Click += (s, e) => Process.Start("https://blog.csdn.net/lgj123xj/category_11811822.html");
 
-        private void btnContact_Click(object sender, EventArgs e)
-        {
-            System.Diagnostics.Process.Start("https://qm.qq.com/cgi-bin/qm/qr?k=pa-gDVKW6EHScuoeIxLgncshyQJgM3jP&jump_from=webapi&authKey=7yeoSaM8AVK+Svc/FBskmAu6n478PQn1BgNdtTZArMjc9YbSBRfSC+pufaKUKWJM");
-            Clipboard.SetDataObject("929371169");
-            this.ShowToast("QQ群：929371169 (已复制)", ToastMode.Preemption, 5000);
-        }
-    }
-
-    /// <summary>
-    /// 导航栏数据
-    /// </summary>
-    public class NavigationBarData : Dictionary<string, Lazy<Control>>
-    {
-        public string Name { get; set; }
-        public Icon Icon { get; set; }
-
-        public NavigationBarData(string name, Icon icon = null)
-        {
-            Name = name;
-            Icon = icon;
+            bottomBar.AddItem(linklab);
+            bottomBar.AddItem(labContactUs);
+            bottomBar.AddItem(labCopyright);
         }
     }
 }

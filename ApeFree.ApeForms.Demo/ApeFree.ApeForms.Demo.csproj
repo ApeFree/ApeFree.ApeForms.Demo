@@ -43,13 +43,16 @@
       <HintPath>..\packages\ApeFree.ApeDialogs.0.10.14\lib\net45\ApeFree.ApeDialogs.dll</HintPath>
     </Reference>
     <Reference Include="ApeFree.ApeForms.Core, Version=0.11.3.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\ApeFree.ApeForms.Core.0.11.3-alpha0706\lib\net461\ApeFree.ApeForms.Core.dll</HintPath>
+      <HintPath>..\packages\ApeFree.ApeForms.Core.0.11.3\lib\net461\ApeFree.ApeForms.Core.dll</HintPath>
     </Reference>
-    <Reference Include="ApeFree.ApeForms.Forms, Version=0.11.2.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\ApeFree.ApeForms.Forms.0.11.2-alpha0703\lib\net461\ApeFree.ApeForms.Forms.dll</HintPath>
+    <Reference Include="ApeFree.ApeForms.Forms, Version=0.11.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ApeFree.ApeForms.Forms.0.11.3\lib\net461\ApeFree.ApeForms.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="ApeFree.ApeForms.TemplateNest, Version=0.11.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ApeFree.ApeForms.TemplateNest.0.11.3\lib\net461\ApeFree.ApeForms.TemplateNest.dll</HintPath>
     </Reference>
     <Reference Include="ApeFree.Cake2D, Version=0.0.3.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\ApeFree.Cake2D.0.0.3-alpha0703\lib\net40\ApeFree.Cake2D.dll</HintPath>
+      <HintPath>..\packages\ApeFree.Cake2D.0.0.3\lib\net40\ApeFree.Cake2D.dll</HintPath>
     </Reference>
     <Reference Include="Costura, Version=5.7.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Costura.Fody.5.7.0\lib\netstandard1.0\Costura.dll</HintPath>
