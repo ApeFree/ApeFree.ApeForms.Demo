@@ -48,8 +48,8 @@
     <Reference Include="ApeFree.ApeForms.Forms, Version=0.11.3.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\ApeFree.ApeForms.Forms.0.11.3\lib\net461\ApeFree.ApeForms.Forms.dll</HintPath>
     </Reference>
-    <Reference Include="ApeFree.ApeForms.TemplateNest, Version=0.11.3.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\ApeFree.ApeForms.TemplateNest.0.11.3\lib\net461\ApeFree.ApeForms.TemplateNest.dll</HintPath>
+    <Reference Include="ApeFree.ApeForms.TemplateNest, Version=0.11.3.4, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ApeFree.ApeForms.TemplateNest.0.11.3.4\lib\net461\ApeFree.ApeForms.TemplateNest.dll</HintPath>
     </Reference>
     <Reference Include="ApeFree.Cake2D, Version=0.0.3.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\ApeFree.Cake2D.0.0.3\lib\net40\ApeFree.Cake2D.dll</HintPath>
