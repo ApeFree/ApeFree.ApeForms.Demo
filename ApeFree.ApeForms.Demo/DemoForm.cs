@@ -70,7 +70,7 @@ namespace ApeFree.ApeForms.Demo
                 },
             };
 
-            TopBarData = new List<TopBarItem> { 
+            TopBarData = new List<TopBarItem> {
                 new TopBarItem("获取源码",(s,e)=>Process.Start("https://blog.csdn.net/lgj123xj/category_11811822.html")),
                 new TopBarItem("更多文档",(s,e)=>Process.Start("https://blog.csdn.net/lgj123xj/category_11811822.html")),
                 new TopBarItem("加入组织",(s,e)=>{

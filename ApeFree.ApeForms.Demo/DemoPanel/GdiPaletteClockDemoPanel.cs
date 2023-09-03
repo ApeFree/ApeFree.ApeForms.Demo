@@ -55,9 +55,7 @@ namespace ApeFree.ApeForms.Demo.DemoPanel
             layerMinute = palette.DrawVector(new GdiStyle() { Pen = new Pen(Color.DarkGreen, 3) }, new VectorSahpe(centralPoint, clockRadius - 30, -90));
             layerHour = palette.DrawVector(new GdiStyle() { Pen = new Pen(Color.DarkBlue, 5) }, new VectorSahpe(centralPoint, clockRadius - 50, -90));
 
-            var points = new[] { layerSecond, layerMinute, layerHour }.Select(l => l.Shape.EndPoint);
-
-            layerPolygon = palette.DrawPolygon(new GdiStyle() { Pen = new Pen(Color.FromArgb(0, 122, 204), 1), Brush = new SolidBrush(Color.FromArgb(64, 0, 122, 204)) }, new PolygonShape(points));
+            layerPolygon = palette.DrawPolygon(new GdiStyle() { Pen = new Pen(Color.FromArgb(0, 122, 204), 1), Brush = new SolidBrush(Color.FromArgb(64, 0, 122, 204)) }, new PolygonShape(new PointF[] { new PointF(), new PointF(), new PointF() }));
         }
 
 
@@ -72,6 +70,8 @@ namespace ApeFree.ApeForms.Demo.DemoPanel
         int c = 0;
         private void timerClock_Tick(object sender, EventArgs e)
         {
+            FindForm().Text = c++.ToString();
+
             // 获取当前时间，并计算当前是今日的第几秒
             var now = DateTime.Now;
             var totalSeconds = now.Hour * 3600 + now.Minute * 60 + now.Second;
@@ -90,8 +90,46 @@ namespace ApeFree.ApeForms.Demo.DemoPanel
                 shape.Angle = totalSeconds / 86400f * 360 - 90;
             });
 
+            var points = new[] { layerSecond, layerMinute, layerHour }.Select(l => l.Shape.EndPoint);
+            layerPolygon.Shape.Points = points.ToArray();
+
             UpdateClock();
         }
+
+        Bitmap buffer;
+
+        // 刷新时钟上的时间
+        //public void UpdateClock()
+        //{
+        //    // 需要绘制的矩形区域
+        //    Rectangle rect = ctrlCanvas.ClientRectangle;
+
+        //    if (buffer == null)
+        //    {
+        //        buffer = new Bitmap(rect.Width, rect.Height);
+
+        //        // 在位图缓存上绘制方块
+        //        // 清除之前绘制的内容
+        //        palette.Canvas = Graphics.FromImage(buffer);
+        //    }
+
+        //    if (ctrlCanvas.BackgroundImage != null)
+        //    {
+        //        palette.Canvas.DrawImageUnscaled(ctrlCanvas.BackgroundImage, rect);
+        //    }
+        //    else
+        //    {
+        //        palette.Canvas.Clear(ctrlCanvas.BackColor);
+        //    }
+
+        //    palette.UpdateCanvas();
+
+        //    // 将位图缓存直接绘制到 Panel 控件上
+        //    using (Graphics graphics = ctrlCanvas.CreateGraphics())
+        //    {
+        //        graphics.DrawImageUnscaled(buffer, rect);
+        //    }
+        //}
 
         // 刷新时钟上的时间
         public void UpdateClock()

@@ -133,6 +133,11 @@ namespace ApeFree.ApeForms.Demo.DemoPanel
         private readonly GdiStyle axisStyle = new GdiStyle() { Pen = new Pen(Color.Gray) };
 
         /// <summary>
+        /// 标签风格
+        /// </summary>
+        private readonly GdiStyle labelStyle = new GdiStyle() { Pen = new Pen(Color.Gray), StringFormat = new StringFormat() { Alignment = StringAlignment.Center, LineAlignment = StringAlignment.Center } };
+
+        /// <summary>
         /// 图表中的数据系列
         /// </summary>
         public List<RadarChartSeries> Series
@@ -175,12 +180,8 @@ namespace ApeFree.ApeForms.Demo.DemoPanel
         private Layer<GdiStyle, TextShape> tipsLayer;
         private readonly List<Layer<GdiStyle, CircleShape>> ringLayers = new List<Layer<GdiStyle, CircleShape>>();
         private readonly List<Layer<GdiStyle, VectorSahpe>> axisLayers = new List<Layer<GdiStyle, VectorSahpe>>();
+        private readonly List<Layer<GdiStyle, TextShape>> labelLayers = new List<Layer<GdiStyle, TextShape>>();
         private readonly List<Layer<GdiStyle, PolygonShape>> polygonLayers = new List<Layer<GdiStyle, PolygonShape>>();
-
-        public RadarChart()
-        {
-            RefreshChart(); 
-        }
 
         private void RedrawRings()
         {
@@ -217,6 +218,10 @@ namespace ApeFree.ApeForms.Demo.DemoPanel
                     var layer = palette.DrawVector(axisStyle, new VectorSahpe(CenterPoint, 0, 0));
                     layer.Visible = false;
                     axisLayers.Add(layer);
+
+                    var text = palette.DrawText(labelStyle, new TextShape(new PointF(), 100, 100, string.Empty));
+                    layer.Visible = false;
+                    labelLayers.Add(text);
                 }
             }
 
@@ -227,6 +232,15 @@ namespace ApeFree.ApeForms.Demo.DemoPanel
                 layer.Shape.Length = maxRadius;
                 layer.Shape.Angle = 360 / AxisCount * i;
                 layer.Visible = i < axisCount;
+
+                var text = labelLayers[i];
+                text.Visible = layer.Visible;
+                if (ChartAreas.Count > i)
+                {
+                    var vector = layer.Shape;
+                    text.Shape.Location = Math2D.CalculatePointOnCircle(vector.StartPoint, vector.Length + 20, vector.Angle).Subtract(50, 50);
+                    text.Shape.Text = ChartAreas[i].Name;
+                }
             }
         }
 
@@ -260,7 +274,7 @@ namespace ApeFree.ApeForms.Demo.DemoPanel
                 {
                     var area = ChartAreas[ai];
                     return (float)((v - area.MinValue) / (area.MaxValue - area.MinValue));
-                });
+                }).ToArray();
 
                 List<PointF> points = new List<PointF>();
                 for (int j = 0; j < AxisCount; j++)
@@ -269,7 +283,7 @@ namespace ApeFree.ApeForms.Demo.DemoPanel
                     points.Add(p);
                 }
 
-                layer.Shape.Points = points;
+                layer.Shape.Points = points.ToArray();
                 layer.Style.Clear();
                 layer.Style.Pen = new Pen(series.Color);
                 layer.Style.Brush = new SolidBrush(Color.FromArgb(AreaOpacity, series.Color));
