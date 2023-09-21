@@ -54,6 +54,7 @@ namespace ApeFree.ApeForms.Demo.DemoPanel
                 // 修改文本内容
                 s.Content = tbContent.Text;
             });
+            (dialog as ApeFormsDialog<bool>).InnerDialog.ForeColor = Color.IndianRed;
             dialog.Show();
         }
 
@@ -108,8 +109,9 @@ namespace ApeFree.ApeForms.Demo.DemoPanel
                 s.CancelOption.Text = "Cancel(取消)";
                 // 清空按钮文本
                 s.ClearOption.Text = "Clear(清空)";
+                // 提醒色
+                s.ReminderColor = Color.IndianRed;
             });
-
             dialog.Show();
 
             if (dialog.Result.IsCancel)
