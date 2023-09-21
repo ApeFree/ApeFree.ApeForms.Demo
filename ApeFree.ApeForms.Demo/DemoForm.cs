@@ -20,6 +20,9 @@ namespace ApeFree.ApeForms.Demo
         {
             InitializeComponent();
 
+            // 程序标题
+            Text = $"{ProductName} - V{ProductVersion}";
+
             // 修改Logo
             LogoImage = Resources.ApeForms_Logo;
 
