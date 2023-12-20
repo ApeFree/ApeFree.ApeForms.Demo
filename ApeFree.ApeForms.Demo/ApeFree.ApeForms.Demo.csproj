@@ -42,14 +42,14 @@
     <Reference Include="ApeFree.ApeDialogs, Version=0.10.17.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\ApeFree.ApeDialogs.0.10.17-beta0922\lib\net45\ApeFree.ApeDialogs.dll</HintPath>
     </Reference>
-    <Reference Include="ApeFree.ApeForms.Core, Version=0.11.7.1, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\ApeFree.ApeForms.Core.0.11.7.1-beta0922\lib\net461\ApeFree.ApeForms.Core.dll</HintPath>
+    <Reference Include="ApeFree.ApeForms.Core, Version=0.11.9.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ApeFree.ApeForms.Core.0.11.9-beta1221\lib\net461\ApeFree.ApeForms.Core.dll</HintPath>
     </Reference>
-    <Reference Include="ApeFree.ApeForms.Forms, Version=0.11.7.1, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\ApeFree.ApeForms.Forms.0.11.7.1-beta0922\lib\net461\ApeFree.ApeForms.Forms.dll</HintPath>
+    <Reference Include="ApeFree.ApeForms.Forms, Version=0.11.8.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ApeFree.ApeForms.Forms.0.11.8-beta1211\lib\net461\ApeFree.ApeForms.Forms.dll</HintPath>
     </Reference>
-    <Reference Include="ApeFree.ApeForms.TemplateNest, Version=0.11.6.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\ApeFree.ApeForms.TemplateNest.0.11.6-beta0902\lib\net461\ApeFree.ApeForms.TemplateNest.dll</HintPath>
+    <Reference Include="ApeFree.ApeForms.TemplateNest, Version=0.11.9.2, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ApeFree.ApeForms.TemplateNest.0.11.9.2-beta1221\lib\net461\ApeFree.ApeForms.TemplateNest.dll</HintPath>
     </Reference>
     <Reference Include="ApeFree.Cake2D, Version=0.0.5.1, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\ApeFree.Cake2D.0.0.5.1-beta0922\lib\net40\ApeFree.Cake2D.dll</HintPath>
@@ -63,8 +63,8 @@
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="STTech.CodePlus, Version=1.5.14.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\STTech.CodePlus.1.5.14\lib\net45\STTech.CodePlus.dll</HintPath>
+    <Reference Include="STTech.CodePlus, Version=1.6.4.3, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\STTech.CodePlus.1.6.4.3-alpha1016\lib\net45\STTech.CodePlus.dll</HintPath>
     </Reference>
     <Reference Include="System">
       <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\System.dll</HintPath>
@@ -313,10 +313,19 @@
     <None Include="Resources\Magent_09.png" />
     <None Include="Resources\Magent_10.png" />
     <None Include="Resources\Magent_01.png" />
-    <None Include="Resources\ApeForms LOGO.png" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="ApeFree_Icon_64px.ico" />
+    <None Include="Resources\Icon_07.png" />
+    <None Include="Resources\Icon_06.png" />
+    <None Include="Resources\Icon_05.png" />
+    <None Include="Resources\Icon_04.png" />
+    <None Include="Resources\Icon_03.png" />
+    <None Include="Resources\Icon_02.png" />
+    <None Include="Resources\Icon_01.png" />
+    <None Include="Resources\Icon_00.png" />
+    <None Include="Resources\Icon_08.png" />
+    <None Include="Resources\Icon_09.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Fody.6.5.5\build\Fody.targets" Condition="Exists('..\packages\Fody.6.5.5\build\Fody.targets')" />
