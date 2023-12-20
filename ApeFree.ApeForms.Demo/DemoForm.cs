@@ -32,31 +32,31 @@ namespace ApeFree.ApeForms.Demo
 
             SideBarData = new List<NavBarGroup>
             {
-                new NavBarGroup("Button")
+                new NavBarGroup("Button",Resources.Icon_00)
                 {
-                    new NavItem ("Button",typeof(ButtonDemoPanel) ),
+                    new NavItem ("Button",typeof(ButtonDemoPanel)){ Icon = Resources.Icon_01},
                 },
-                new NavBarGroup("DatePicker")
+                new NavBarGroup("DatePicker",Resources.Icon_02)
                 {
-                    new NavItem("DatePicker", typeof(DatePickerDemoPanel)),
+                    new NavItem("DatePicker", typeof(DatePickerDemoPanel)){ Icon = Resources.Icon_05},
                 },
-                new NavBarGroup("Card")
+                new NavBarGroup("Card",Resources.Icon_03)
                 {
-                    new NavItem("Magnet", typeof(MagnetDemoPanel)),
-                    new NavItem("SimpleCard", typeof(SimpleCardDemoPanel)),
+                    new NavItem("Magnet", typeof(MagnetDemoPanel)){ Icon = Resources.Icon_06},
+                    new NavItem("SimpleCard", typeof(SimpleCardDemoPanel)){ Icon = Resources.Icon_06},
                 },
-                new NavBarGroup("Container")
+                new NavBarGroup("Container",Resources.Icon_04)
                 {
-                    new NavItem("ControlListBox", typeof(ControlListBoxDemoPanel)),
-                    new NavItem("SlideBox", typeof(SlideBoxDemoPanel)),
-                    new NavItem("Shutter(preview)", typeof(ShutterDemoPanel)),
+                    new NavItem("ControlListBox", typeof(ControlListBoxDemoPanel)){ Icon = Resources.Icon_07},
+                    new NavItem("SlideBox", typeof(SlideBoxDemoPanel)){ Icon = Resources.Icon_07},
+                    new NavItem("Shutter(preview)", typeof(ShutterDemoPanel)){ Icon = Resources.Icon_07},
                 },
-                new NavBarGroup("Notifications")
+                new NavBarGroup("Notifications",Resources.Icon_08)
                 {
                         new NavItem("Toast", typeof(ToastDemoPanel)),
                     new NavItem("Notification", typeof(NotificationBoxDemoPanel)),
                 },
-                new NavBarGroup("Dialogs")
+                new NavBarGroup("Dialogs",Resources.Icon_09)
                 {
                     new NavItem("ApeDialogs", typeof(DialogDemoPanel)),
                 },
