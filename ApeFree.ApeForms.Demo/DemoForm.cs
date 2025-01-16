@@ -1,6 +1,7 @@
 ﻿using ApeFree.ApeForms.Core.Controls;
 using ApeFree.ApeForms.Demo.DemoPanel;
 using ApeFree.ApeForms.Demo.Properties;
+using ApeFree.ApeForms.TemplateNest;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -45,15 +46,20 @@ namespace ApeFree.ApeForms.Demo
                     new NavItem("Magnet", typeof(MagnetDemoPanel)){ Icon = Resources.Icon_06},
                     new NavItem("SimpleCard", typeof(SimpleCardDemoPanel)){ Icon = Resources.Icon_06},
                 },
+                new NavBarGroup("Grid",Resources.Icon_09)
+                {
+                    new NavItem("GridView", typeof(GridViewDemoPanel)){ Icon = Resources.Icon_09},
+                },
                 new NavBarGroup("Container",Resources.Icon_04)
                 {
                     new NavItem("ControlListBox", typeof(ControlListBoxDemoPanel)){ Icon = Resources.Icon_07},
                     new NavItem("SlideBox", typeof(SlideBoxDemoPanel)){ Icon = Resources.Icon_07},
                     new NavItem("Shutter(preview)", typeof(ShutterDemoPanel)){ Icon = Resources.Icon_07},
+                    new NavItem("StageLayout", typeof(StageLayoutDemoPanel)){ Icon = Resources.Icon_07},
                 },
                 new NavBarGroup("Notifications",Resources.Icon_08)
                 {
-                        new NavItem("Toast", typeof(ToastDemoPanel)),
+                    new NavItem("Toast", typeof(ToastDemoPanel)),
                     new NavItem("Notification", typeof(NotificationBoxDemoPanel)),
                 },
                 new NavBarGroup("Dialogs",Resources.Icon_09)
@@ -74,7 +80,7 @@ namespace ApeFree.ApeForms.Demo
             };
 
             TopBarData = new List<TopBarItem> {
-                new TopBarItem("获取源码",(s,e)=>Process.Start("https://blog.csdn.net/lgj123xj/category_11811822.html")),
+                new TopBarItem("获取源码",(s,e)=>Process.Start("https://github.com/ApeFree/ApeFree.ApeForms.Demo")),
                 new TopBarItem("更多文档",(s,e)=>Process.Start("https://blog.csdn.net/lgj123xj/category_11811822.html")),
                 new TopBarItem("加入组织",(s,e)=>{
                     Process.Start("https://qm.qq.com/cgi-bin/qm/qr?k=pa-gDVKW6EHScuoeIxLgncshyQJgM3jP&jump_from=webapi&authKey=7yeoSaM8AVK+Svc/FBskmAu6n478PQn1BgNdtTZArMjc9YbSBRfSC+pufaKUKWJM");
@@ -90,7 +96,7 @@ namespace ApeFree.ApeForms.Demo
 
             var linklab = new LinkLabel() { Text = "博客主页", AutoSize = false, Size = new Size(0, 15), TextAlign = ContentAlignment.MiddleCenter };
             var labContactUs = new Label() { Text = "QQ交流群: 929371169", AutoSize = false, Size = new Size(0, 15), TextAlign = ContentAlignment.MiddleCenter };
-            var labCopyright = new Label() { Text = "Copyright © 2022-2023 Landriesnidis", AutoSize = false, Size = new Size(0, 15), TextAlign = ContentAlignment.MiddleCenter };
+            var labCopyright = new Label() { Text = "Copyright © 2022-2024 ApeFree", AutoSize = false, Size = new Size(0, 15), TextAlign = ContentAlignment.MiddleCenter };
 
             linklab.Click += (s, e) => Process.Start("https://blog.csdn.net/lgj123xj/category_11811822.html");
 

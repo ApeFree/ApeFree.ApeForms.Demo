@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("ApeFree.ApeForms.Demo")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("ApeFree Group")]
+[assembly: AssemblyCompany("ApeFree")]
 [assembly: AssemblyProduct("ApeForms Demo")]
-[assembly: AssemblyCopyright("Copyright ©  2022-2023 Landriesnidis")]
+[assembly: AssemblyCopyright("Copyright ©  2022-2024 ApeFree")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -33,4 +33,4 @@ using System.Runtime.InteropServices;
 //通过使用 "*"，如下所示:
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("1.0.0.0")]
-[assembly: AssemblyFileVersion("1.3.2.1221")]
+[assembly: AssemblyFileVersion("1.5.1.1206")]

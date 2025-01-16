@@ -5,6 +5,12 @@ VisualStudioVersion = 17.4.33103.184
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApeFree.ApeForms.Demo", "ApeFree.ApeForms.Demo\ApeFree.ApeForms.Demo.csproj", "{FE7CF2B8-2D41-4533-B40D-A283473E7981}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApeFree.ApeForms.Core", "..\ApeFree.ApeForms\ApeFree.ApeForms.Core\ApeFree.ApeForms.Core.csproj", "{F05B0121-6EF0-48D8-82C9-FD88D4BB2236}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApeFree.ApeForms.Forms", "..\ApeFree.ApeForms\ApeFree.ApeForms.Forms\ApeFree.ApeForms.Forms.csproj", "{3E4BD67B-0385-4F66-9EAA-CFBDD5519419}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApeFree.ApeForms.TemplateNest", "..\ApeFree.ApeForms\ApeFree.ApeForms.TemplateNest\ApeFree.ApeForms.TemplateNest.csproj", "{7D6D77B3-C31F-4B2B-ABBF-D72DDCF77AF5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +21,18 @@ Global
 		{FE7CF2B8-2D41-4533-B40D-A283473E7981}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FE7CF2B8-2D41-4533-B40D-A283473E7981}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FE7CF2B8-2D41-4533-B40D-A283473E7981}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F05B0121-6EF0-48D8-82C9-FD88D4BB2236}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F05B0121-6EF0-48D8-82C9-FD88D4BB2236}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F05B0121-6EF0-48D8-82C9-FD88D4BB2236}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F05B0121-6EF0-48D8-82C9-FD88D4BB2236}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E4BD67B-0385-4F66-9EAA-CFBDD5519419}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E4BD67B-0385-4F66-9EAA-CFBDD5519419}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E4BD67B-0385-4F66-9EAA-CFBDD5519419}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E4BD67B-0385-4F66-9EAA-CFBDD5519419}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D6D77B3-C31F-4B2B-ABBF-D72DDCF77AF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D6D77B3-C31F-4B2B-ABBF-D72DDCF77AF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D6D77B3-C31F-4B2B-ABBF-D72DDCF77AF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D6D77B3-C31F-4B2B-ABBF-D72DDCF77AF5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

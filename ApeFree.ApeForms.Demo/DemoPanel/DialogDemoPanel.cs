@@ -441,7 +441,17 @@ namespace ApeFree.ApeForms.Demo.DemoPanel
             }
             else
             {
-                var lines = sheet.Fields.Select(p => $"{p.Title}：\t{p.Data}");
+                var lines = sheet.Fields.Select(p =>
+                {
+                    if (p.Data is object[] array)
+                    {
+                        return $"{p.Title}：\t{string.Join("、", array)}";
+                    }
+                    else
+                    {
+                        return $"{p.Title}：\t{p.Data}";
+                    }
+                });
                 Toast.Show($"{lines.Join("\r\n")}", 2000, null, ToastMode.Reuse);
 
                 // Tips: 读取单个字段的数据可以通过以下方法
@@ -484,6 +494,74 @@ namespace ApeFree.ApeForms.Demo.DemoPanel
             }
         }
 
+
+        private void btnOpenFileDialog_Click(object sender, EventArgs e)
+        {
+            var path = Application.ExecutablePath;
+
+            var dialog = provider.CreateOpenFileDialog(path, s =>
+            {
+                // 搜索通配符
+                s.SearchPattern = "*.exe";
+
+                // 标题文本
+                s.Title = tbTitle.Text;
+                // 消息文本
+                s.Content = $"{tbContent.Text}\r\n当前设置的通配符({nameof(s.SearchPattern)})为:{s.SearchPattern}";
+
+                // 是否支持多选
+                s.MultiSelect = true;
+                // 是否可取消
+                s.Cancelable = true;
+                // 确认按钮文本
+                s.ConfirmOption.Text = "Confirm(确定)";
+                // 取消按钮文本
+                s.CancelOption.Text = "Cancel(取消)";
+            });
+
+            dialog.Show();
+
+            if (dialog.Result.IsCancel)
+            {
+                Toast.Show("取消选择");
+            }
+            else
+            {
+                Toast.Show($"当前选中的文件路径：\r\n{dialog.Result.Data.Join("\r\n")}");
+            }
+        }
+
+        private void btnOpenFolderDialog_Click(object sender, EventArgs e)
+        {
+            var dialog = provider.CreateOpenFolderDialog("C:/", s =>
+            {
+                // 标题文本
+                s.Title = tbTitle.Text;
+                // 消息文本
+                s.Content = $"{tbContent.Text}";
+
+                // 是否支持多选
+                s.MultiSelect = true;
+                // 是否可取消
+                s.Cancelable = true;
+                // 确认按钮文本
+                s.ConfirmOption.Text = "Confirm(确定)";
+                // 取消按钮文本
+                s.CancelOption.Text = "Cancel(取消)";
+            });
+
+            dialog.Show();
+
+            if (dialog.Result.IsCancel)
+            {
+                Toast.Show("取消选择");
+            }
+            else
+            {
+                Toast.Show($"当前选中的文件夹路径：\r\n{dialog.Result.Data.Join("\r\n")}");
+            }
+        }
+
         private void btnOptionColor_Click(object sender, EventArgs e)
         {
             var btn = sender as Control;
@@ -511,7 +589,5 @@ namespace ApeFree.ApeForms.Demo.DemoPanel
             public string Name { get; set; }
             public string Description { get; set; }
         }
-
-
     }
 }

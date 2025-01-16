@@ -70,8 +70,6 @@ namespace ApeFree.ApeForms.Demo.DemoPanel
         int c = 0;
         private void timerClock_Tick(object sender, EventArgs e)
         {
-            FindForm().Text = c++.ToString();
-
             // 获取当前时间，并计算当前是今日的第几秒
             var now = DateTime.Now;
             var totalSeconds = now.Hour * 3600 + now.Minute * 60 + now.Second;
