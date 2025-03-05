@@ -35,7 +35,7 @@ namespace ApeFree.ApeForms.Demo
             {
                 new NavBarGroup("Button",Resources.Icon_00)
                 {
-                    new NavItem ("Button",typeof(ButtonDemoPanel)){ Icon = Resources.Icon_01},
+                    new NavItem ("Button",typeof(ButtonDemoPanel)){ Icon = Resources.Icon_01, ShowCloseButton = false },
                 },
                 new NavBarGroup("DatePicker",Resources.Icon_02)
                 {
@@ -80,6 +80,15 @@ namespace ApeFree.ApeForms.Demo
             };
 
             TopBarData = new List<TopBarItem> {
+                new TopBarItem("分页栏关闭按钮",(s,e)=>{
+                    var tsb = SlideTabBox.Pages.Keys.FirstOrDefault();
+                    if (tsb != null)
+                    {
+                        var pi = tsb.GetType().GetProperty("ShowCloseButton");
+                        var b = (bool)pi.GetValue(tsb);
+                        pi.SetValue(tsb,!b);
+                    }
+                }),
                 new TopBarItem("获取源码",(s,e)=>Process.Start("https://github.com/ApeFree/ApeFree.ApeForms.Demo")),
                 new TopBarItem("更多文档",(s,e)=>Process.Start("https://blog.csdn.net/lgj123xj/category_11811822.html")),
                 new TopBarItem("加入组织",(s,e)=>{
