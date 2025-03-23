@@ -25,6 +25,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -333,15 +334,15 @@
       <Name>ApeFree.ApeDialogs</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\ApeFree.ApeForms\ApeFree.ApeForms.Core\ApeFree.ApeForms.Core.csproj">
-      <Project>{29E9FE9E-C03A-4AF6-8E9A-7A214BE48C1A}</Project>
+      <Project>{f05b0121-6ef0-48d8-82c9-fd88d4bb2236}</Project>
       <Name>ApeFree.ApeForms.Core</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\ApeFree.ApeForms\ApeFree.ApeForms.Forms\ApeFree.ApeForms.Forms.csproj">
-      <Project>{b59f294f-e074-47ab-a4ec-ca307b0aaded}</Project>
+      <Project>{3e4bd67b-0385-4f66-9eaa-cfbdd5519419}</Project>
       <Name>ApeFree.ApeForms.Forms</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\ApeFree.ApeForms\ApeFree.ApeForms.TemplateNest\ApeFree.ApeForms.TemplateNest.csproj">
-      <Project>{01bfee8d-af96-4078-8d47-2ca59b5627bc}</Project>
+      <Project>{7d6d77b3-c31f-4b2b-abbf-d72ddcf77af5}</Project>
       <Name>ApeFree.ApeForms.TemplateNest</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\ApeFree.Cake2D\ApeFree.Cake2D\ApeFree.Cake2D.csproj">

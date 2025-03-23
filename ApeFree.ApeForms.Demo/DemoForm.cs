@@ -27,10 +27,7 @@ namespace ApeFree.ApeForms.Demo
             // 修改Logo
             LogoImage = Resources.ApeForms_Logo;
 
-            // 修改关闭选项名称
-            CloseAllPagesOptionText = "全部关闭";
-            ClosePageOptionText = "关闭";
-
+            // 设置侧边栏的菜单数据
             SideBarData = new List<NavBarGroup>
             {
                 new NavBarGroup("Button",Resources.Icon_00)
@@ -79,6 +76,7 @@ namespace ApeFree.ApeForms.Demo
                 },
             };
 
+            // 设置顶部栏的选项数据
             TopBarData = new List<TopBarItem> {
                 new TopBarItem("获取源码",(s,e)=>Process.Start("https://github.com/ApeFree/ApeFree.ApeForms.Demo")),
                 new TopBarItem("更多文档",(s,e)=>Process.Start("https://blog.csdn.net/lgj123xj/category_11811822.html")),
@@ -88,6 +86,21 @@ namespace ApeFree.ApeForms.Demo
                     this.ShowToast("QQ群：929371169 (已复制)", ToastMode.Preemption, 5000);
                 }),
             };
+
+            // 设置分页栏控件标题项的右键快捷菜单
+            var tsmiCloseOne = PageItemContextMenu.Items.Add("Close", null, (s, e) => SlideTabBox.RemovePage(SlideTabBox.ActiveContextMenuTitleItem.Text));    // 添加关闭单个页面选项
+            var tsmiCloseAll = PageItemContextMenu.Items.Add("Close all pages", null, (s, e) =>                                                                // 添加关闭全部页面选项（除不显示关闭按钮的选项外）
+            {
+                foreach (var item in SlideTabBox.PageTitleItems)
+                {
+                    if (item.ShowCloseButton) // 如果页面的标题项允许显示关闭按钮，则代表该页面允许关闭
+                    {
+                        SlideTabBox.RemovePage(item.Text);
+                    }
+                }
+            });
+            PageItemContextMenu.Opening += (s, e) => tsmiCloseOne.Enabled = SlideTabBox.ActiveContextMenuTitleItem.ShowCloseButton;
+
         }
 
         protected override void LoadBottomBar(ControlListBox bottomBar)
