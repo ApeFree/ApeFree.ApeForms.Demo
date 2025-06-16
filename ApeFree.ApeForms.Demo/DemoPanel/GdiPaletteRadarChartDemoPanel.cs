@@ -20,11 +20,12 @@ namespace ApeFree.ApeForms.Demo.DemoPanel
             InitializeComponent();
 
             var chart = new RadarChart();
+            chart.Parent = groupBox1;
+            chart.SizeMode = PictureBoxSizeMode.Zoom;
             chart.Size = new Size(400, 400);
             chart.Location = new Point(20, 20);
             chart.BackColor = Color.White;
             chart.Dock = DockStyle.Fill;
-            chart.Parent = groupBox1;
             chart.BringToFront();
 
             chart.ChartAreas.Add(new RadarChartAreas { Name = "A", MaxValue = 100, MinValue = 0 });
@@ -47,7 +48,7 @@ namespace ApeFree.ApeForms.Demo.DemoPanel
     /// <summary>
     /// 雷达图控件
     /// </summary>
-    public partial class RadarChart : UserControl
+    public partial class RadarChart : PaletteBox
     {
         /// <summary>
         /// 最大轴数
@@ -67,17 +68,12 @@ namespace ApeFree.ApeForms.Demo.DemoPanel
         /// <summary>
         /// 控件中心点的坐标
         /// </summary>
-        private PointF CenterPoint => new PointF(Width / 2, Height / 2);
+        private PointF CenterPoint => new PointF(Palette.CanvasSize.Width / 2, Palette.CanvasSize.Height / 2);
 
         /// <summary>
         /// 圆环的最大半径
         /// </summary>
-        private float MaxRadius => Math.Min(Width, Height) / 2;
-
-        /// <summary>
-        /// GDI+绘图画板
-        /// </summary>
-        private GdiPalette palette = new GdiPalette();
+        private float MaxRadius => Math.Min(Palette.CanvasSize.Width, Palette.CanvasSize.Height) / 2 - 30;
 
         /// <summary>
         /// 圈数
@@ -95,7 +91,7 @@ namespace ApeFree.ApeForms.Demo.DemoPanel
                 {
                     ringCount = value;
                     RedrawRings();
-                    Update();
+                    RefreshImage();
                 }
             }
         }
@@ -109,18 +105,18 @@ namespace ApeFree.ApeForms.Demo.DemoPanel
         /// <summary>
         /// 区域不透明度
         /// </summary>
-        public byte AreaOpacity { get => areaOpacity; set { areaOpacity = value; RedrawPolygon(); Update(); } }
+        public byte AreaOpacity { get => areaOpacity; set { areaOpacity = value; RedrawPolygon(); RefreshImage(); } }
         private byte areaOpacity = 128;
 
         /// <summary>
         /// 线圈颜色
         /// </summary>
-        public Color RingColor { get => ringStyle.Pen.Color; set { ringStyle.Pen.Color = value; RedrawRings(); Update(); } }
+        public Color RingColor { get => ringStyle.Pen.Color; set { ringStyle.Pen.Color = value; RedrawRings(); RefreshImage(); } }
 
         /// <summary>
         /// 轴颜色
         /// </summary>
-        public Color AxisColor { get => axisStyle.Pen.Color; set { axisStyle.Pen.Color = value; RedrawAxis(); Update(); } }
+        public Color AxisColor { get => axisStyle.Pen.Color; set { axisStyle.Pen.Color = value; RedrawAxis(); RefreshImage(); } }
 
         /// <summary>
         /// 线圈风格
@@ -146,7 +142,7 @@ namespace ApeFree.ApeForms.Demo.DemoPanel
             {
                 series = value;
                 RedrawPolygon();
-                Update();
+                RefreshImage();
             }
         }
         private List<RadarChartSeries> series = new List<RadarChartSeries>();
@@ -168,7 +164,7 @@ namespace ApeFree.ApeForms.Demo.DemoPanel
                     chartAreas = value;
                     RedrawAxis();
                     RedrawPolygon();
-                    Update();
+                    RefreshImage();
                 }
                 else
                 {
@@ -183,13 +179,19 @@ namespace ApeFree.ApeForms.Demo.DemoPanel
         private readonly List<Layer<GdiStyle, TextShape>> labelLayers = new List<Layer<GdiStyle, TextShape>>();
         private readonly List<Layer<GdiStyle, PolygonShape>> polygonLayers = new List<Layer<GdiStyle, PolygonShape>>();
 
+        public RadarChart()
+        {
+            Palette.CanvasSize = new Size(300, 300);
+            Palette.OutputSize = new Size(300, 300);
+        }
+
         private void RedrawRings()
         {
             if (!ringLayers.Any())
             {
                 for (int i = 0; i < MaxRings; i++)
                 {
-                    var layer = palette.DrawCircle(ringStyle, new CircleShape(CenterPoint, 1));
+                    var layer = Palette.DrawCircle(ringStyle, new CircleShape(CenterPoint, 1));
                     layer.Visible = false;
                     ringLayers.Add(layer);
                 }
@@ -200,7 +202,7 @@ namespace ApeFree.ApeForms.Demo.DemoPanel
             for (int i = 0; i < MaxRings; i++)
             {
                 var layer = ringLayers[i];
-                layer.Shape.CenterPoint = CenterPoint;
+                layer.Shape.Location = CenterPoint;
                 layer.Shape.Radius = interval * (i + 1);
                 layer.Visible = i < RingCount;
             }
@@ -215,11 +217,11 @@ namespace ApeFree.ApeForms.Demo.DemoPanel
             {
                 for (int i = 0; i < MaxAxis; i++)
                 {
-                    var layer = palette.DrawVector(axisStyle, new VectorSahpe(CenterPoint, 0, 0));
+                    var layer = Palette.DrawVector(axisStyle, new VectorSahpe(CenterPoint, 0, 0));
                     layer.Visible = false;
                     axisLayers.Add(layer);
 
-                    var text = palette.DrawText(labelStyle, new TextShape(new PointF(), 100, 100, string.Empty));
+                    var text = Palette.DrawText(labelStyle, new TextShape(new PointF(), 100, 100, string.Empty));
                     layer.Visible = false;
                     labelLayers.Add(text);
                 }
@@ -253,7 +255,7 @@ namespace ApeFree.ApeForms.Demo.DemoPanel
             {
                 for (int i = 0; i < MaxSeries; i++)
                 {
-                    var layer = palette.DrawPolygon(new GdiStyle(), new PolygonShape(null));
+                    var layer = Palette.DrawPolygon(new GdiStyle(), new PolygonShape(new PointF[6]));
                     layer.Visible = false;
                     polygonLayers.Add(layer);
                 }
@@ -283,19 +285,13 @@ namespace ApeFree.ApeForms.Demo.DemoPanel
                     points.Add(p);
                 }
 
-                layer.Shape.Points = points.ToArray();
+                points.CopyTo(layer.Shape.Points, 0);
                 layer.Style.Clear();
                 layer.Style.Pen = new Pen(series.Color);
                 layer.Style.Brush = new SolidBrush(Color.FromArgb(AreaOpacity, series.Color));
                 layer.Visible = true;
                 layer.Tag = series.Name;
             }
-        }
-
-        protected override void OnPaint(PaintEventArgs e)
-        {
-            base.OnPaint(e);
-            Update();
         }
 
         protected override void OnResize(EventArgs e)
@@ -309,44 +305,14 @@ namespace ApeFree.ApeForms.Demo.DemoPanel
             RedrawRings();
             RedrawAxis();
             RedrawPolygon();
-            Update();
-        }
-
-        private void Update()
-        {
-            try
-            {
-                // 需要绘制的矩形区域
-                Rectangle rect = ClientRectangle;
-                palette.ClientRectangle = rect;
-
-                if (BackgroundImage != null)
-                {
-                    palette.Canvas.DrawImageUnscaled(BackgroundImage, rect);
-                }
-                else
-                {
-
-                    palette.Canvas.Clear(BackColor);
-
-                }
-
-                palette.UpdateCanvas();
-
-                // 将位图缓存直接绘制到 Panel 控件上
-                using (Graphics graphics = CreateGraphics())
-                {
-                    graphics.DrawImageUnscaled(palette.Image, rect);
-                }
-            }
-            catch (Exception) { }
+            RefreshImage();
         }
 
         protected override void OnMouseMove(MouseEventArgs e)
         {
             base.OnMouseMove(e);
 
-            var layer = palette.SelectTopLayerByCastingPoint(new PointF(e.X, e.Y));
+            var layer = Palette.SelectTopLayerByCastingPoint(new PointF(e.X, e.Y));
 
             if (layer != null)
             {
@@ -356,7 +322,7 @@ namespace ApeFree.ApeForms.Demo.DemoPanel
                     {
                         tipsLayer.Visible = false;
                     }
-                    Update();
+                    RefreshImage();
                     return;
                 }
 
@@ -368,7 +334,7 @@ namespace ApeFree.ApeForms.Demo.DemoPanel
 
                 if (tipsLayer == null)
                 {
-                    tipsLayer = palette.DrawText(new GdiStyle() { Brush = Brushes.Black, Font = Font, StringFormat = new StringFormat(StringFormatFlags.NoWrap) }, new TextShape(location, 100, 50, layerInfo));
+                    tipsLayer = Palette.DrawText(new GdiStyle() { Brush = Brushes.Black, Font = Font, StringFormat = new StringFormat(StringFormatFlags.NoWrap) }, new TextShape(location, 100, 50, layerInfo));
                     tipsLayer.Selectable = false;
                 }
                 else
@@ -388,7 +354,7 @@ namespace ApeFree.ApeForms.Demo.DemoPanel
                     tipsLayer.Visible = false;
                 }
             }
-            Update();
+            RefreshImage();
         }
     }
 

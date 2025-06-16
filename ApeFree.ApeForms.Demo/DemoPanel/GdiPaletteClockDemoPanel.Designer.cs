@@ -1,4 +1,6 @@
-﻿namespace ApeFree.ApeForms.Demo.DemoPanel
+﻿using ApeFree.ApeForms.Core.Gdi;
+
+namespace ApeFree.ApeForms.Demo.DemoPanel
 {
     partial class GdiPaletteClockDemoPanel
     {
@@ -31,8 +33,9 @@
             this.components = new System.ComponentModel.Container();
             this.timerClock = new System.Windows.Forms.Timer(this.components);
             this.gbCanvas = new System.Windows.Forms.GroupBox();
-            this.panelCanvas = new System.Windows.Forms.Panel();
+            this.box = new PaletteBox();
             this.gbCanvas.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.box)).BeginInit();
             this.SuspendLayout();
             // 
             // timerClock
@@ -43,7 +46,7 @@
             // 
             // gbCanvas
             // 
-            this.gbCanvas.Controls.Add(this.panelCanvas);
+            this.gbCanvas.Controls.Add(this.box);
             this.gbCanvas.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gbCanvas.Location = new System.Drawing.Point(0, 0);
             this.gbCanvas.Name = "gbCanvas";
@@ -52,24 +55,26 @@
             this.gbCanvas.TabStop = false;
             this.gbCanvas.Text = "Canvas";
             // 
-            // panelCanvas
+            // pictureBox1
             // 
-            this.panelCanvas.BackgroundImage = global::ApeFree.ApeForms.Demo.Properties.Resources.Magnet_12;
-            this.panelCanvas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.panelCanvas.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelCanvas.Location = new System.Drawing.Point(3, 17);
-            this.panelCanvas.Name = "panelCanvas";
-            this.panelCanvas.Size = new System.Drawing.Size(554, 343);
-            this.panelCanvas.TabIndex = 0;
+            this.box.BackgroundImage = global::ApeFree.ApeForms.Demo.Properties.Resources.Magnet_13;
+            this.box.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.box.Location = new System.Drawing.Point(3, 17);
+            this.box.Name = "pictureBox1";
+            this.box.Size = new System.Drawing.Size(554, 343);
+            this.box.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.box.TabIndex = 1;
+            this.box.TabStop = false;
             // 
-            // GdiPaletteDemoPanel
+            // GdiPaletteClockDemoPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.gbCanvas);
-            this.Name = "GdiPaletteDemoPanel";
+            this.Name = "GdiPaletteClockDemoPanel";
             this.Size = new System.Drawing.Size(560, 363);
             this.gbCanvas.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.box)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -77,6 +82,6 @@
         #endregion
         private System.Windows.Forms.Timer timerClock;
         private System.Windows.Forms.GroupBox gbCanvas;
-        private System.Windows.Forms.Panel panelCanvas;
+        private PaletteBox box;
     }
 }
