@@ -1,370 +1,67 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\packages\Costura.Fody.5.7.0\build\Costura.Fody.props" Condition="Exists('..\packages\Costura.Fody.5.7.0\build\Costura.Fody.props')" />
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{FE7CF2B8-2D41-4533-B40D-A283473E7981}</ProjectGuid>
     <OutputType>WinExe</OutputType>
+    <TargetFrameworks>net10.0-windows;net8.0-windows;net461;net452</TargetFrameworks>
+    <UseWindowsForms>true</UseWindowsForms>
+    <LangVersion>latest</LangVersion>
     <RootNamespace>ApeFree.ApeForms.Demo</RootNamespace>
     <AssemblyName>ApeFree.ApeForms.Demo</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <Deterministic>true</Deterministic>
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <Prefer32Bit>true</Prefer32Bit>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup>
     <ApplicationIcon>ApeFree_Icon_64px.ico</ApplicationIcon>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <GenerateResourceWarnOnBinaryFormatterUse>false</GenerateResourceWarnOnBinaryFormatterUse>
   </PropertyGroup>
-  <ItemGroup>
-    <Reference Include="Costura, Version=5.7.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Costura.Fody.5.7.0\lib\netstandard1.0\Costura.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Win32.Primitives, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Win32.Primitives.4.3.0\lib\net46\Microsoft.Win32.Primitives.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="System">
-      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\System.dll</HintPath>
-    </Reference>
-    <Reference Include="System.AppContext, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.AppContext.4.3.0\lib\net46\System.AppContext.dll</HintPath>
-    </Reference>
-    <Reference Include="System.ComponentModel.Composition" />
-    <Reference Include="System.Console, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Console.4.3.0\lib\net46\System.Console.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Core" />
-    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.3.0\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Globalization.Calendars, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Globalization.Calendars.4.3.0\lib\net46\System.Globalization.Calendars.dll</HintPath>
-    </Reference>
-    <Reference Include="System.IO.Compression, Version=4.1.2.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.IO.Compression.4.3.0\lib\net46\System.IO.Compression.dll</HintPath>
-    </Reference>
-    <Reference Include="System.IO.Compression.FileSystem" />
-    <Reference Include="System.IO.Compression.ZipFile, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.IO.Compression.ZipFile.4.3.0\lib\net46\System.IO.Compression.ZipFile.dll</HintPath>
-    </Reference>
-    <Reference Include="System.IO.FileSystem, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.IO.FileSystem.4.3.0\lib\net46\System.IO.FileSystem.dll</HintPath>
-    </Reference>
-    <Reference Include="System.IO.FileSystem.Primitives, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.IO.FileSystem.Primitives.4.3.0\lib\net46\System.IO.FileSystem.Primitives.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Net.Http, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Net.Http.4.3.0\lib\net46\System.Net.Http.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Net.Sockets, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Net.Sockets.4.3.0\lib\net46\System.Net.Sockets.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Numerics" />
-    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.0\lib\net461\System.Security.Cryptography.Algorithms.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.3.0\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Deployment" />
-    <Reference Include="System.Drawing" />
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'net452' Or '$(TargetFramework)' == 'net461'">
     <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xml" />
-    <Reference Include="System.Xml.ReaderWriter, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Xml.ReaderWriter.4.3.0\lib\net46\System.Xml.ReaderWriter.dll</HintPath>
-    </Reference>
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Design" />
   </ItemGroup>
+
   <ItemGroup>
-    <Compile Include="DemoForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="DemoForm.Designer.cs">
-      <DependentUpon>DemoForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DemoPanel\ButtonDemoPanel.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="DemoPanel\ButtonDemoPanel.Designer.cs">
-      <DependentUpon>ButtonDemoPanel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DemoPanel\ControlListBoxDemoPanel.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="DemoPanel\ControlListBoxDemoPanel.Designer.cs">
-      <DependentUpon>ControlListBoxDemoPanel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DemoPanel\DatePickerDemoPanel.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="DemoPanel\DatePickerDemoPanel.Designer.cs">
-      <DependentUpon>DatePickerDemoPanel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DemoPanel\DialogDemoPanel.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="DemoPanel\DialogDemoPanel.Designer.cs">
-      <DependentUpon>DialogDemoPanel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DemoPanel\FormExtensionDemoPanel.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="DemoPanel\FormExtensionDemoPanel.Designer.cs">
-      <DependentUpon>FormExtensionDemoPanel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DemoPanel\GdiPaletteClockDemoPanel.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="DemoPanel\GdiPaletteClockDemoPanel.Designer.cs">
-      <DependentUpon>GdiPaletteClockDemoPanel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DemoPanel\GdiPaletteRadarChartDemoPanel.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="DemoPanel\GdiPaletteRadarChartDemoPanel.Designer.cs">
-      <DependentUpon>GdiPaletteRadarChartDemoPanel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DemoPanel\GridViewDemoPanel.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="DemoPanel\GridViewDemoPanel.Designer.cs">
-      <DependentUpon>GridViewDemoPanel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DemoPanel\MagnetDemoPanel.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="DemoPanel\MagnetDemoPanel.Designer.cs">
-      <DependentUpon>MagnetDemoPanel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DemoPanel\GradualChangeExtensionDemoPanel.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="DemoPanel\GradualChangeExtensionDemoPanel.Designer.cs">
-      <DependentUpon>GradualChangeExtensionDemoPanel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DemoPanel\NotificationBoxDemoPanel.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="DemoPanel\NotificationBoxDemoPanel.Designer.cs">
-      <DependentUpon>NotificationBoxDemoPanel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DemoPanel\ShutterDemoPanel.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="DemoPanel\ShutterDemoPanel.Designer.cs">
-      <DependentUpon>ShutterDemoPanel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DemoPanel\SimpleCardDemoPanel.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="DemoPanel\SimpleCardDemoPanel.Designer.cs">
-      <DependentUpon>SimpleCardDemoPanel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DemoPanel\SlideBoxDemoPanel.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="DemoPanel\SlideBoxDemoPanel.Designer.cs">
-      <DependentUpon>SlideBoxDemoPanel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DemoPanel\StageLayoutDemoPanel.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="DemoPanel\StageLayoutDemoPanel.Designer.cs">
-      <DependentUpon>StageLayoutDemoPanel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DemoPanel\ToastDemoPanel.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="DemoPanel\ToastDemoPanel.Designer.cs">
-      <DependentUpon>ToastDemoPanel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="DemoForm.resx">
-      <DependentUpon>DemoForm.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DemoPanel\ButtonDemoPanel.resx">
-      <DependentUpon>ButtonDemoPanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DemoPanel\ControlListBoxDemoPanel.resx">
-      <DependentUpon>ControlListBoxDemoPanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DemoPanel\DatePickerDemoPanel.resx">
-      <DependentUpon>DatePickerDemoPanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DemoPanel\DialogDemoPanel.resx">
-      <DependentUpon>DialogDemoPanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DemoPanel\FormExtensionDemoPanel.resx">
-      <DependentUpon>FormExtensionDemoPanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DemoPanel\GdiPaletteClockDemoPanel.resx">
-      <DependentUpon>GdiPaletteClockDemoPanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DemoPanel\GdiPaletteRadarChartDemoPanel.resx">
-      <DependentUpon>GdiPaletteRadarChartDemoPanel.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DemoPanel\GridViewDemoPanel.resx">
-      <DependentUpon>GridViewDemoPanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DemoPanel\MagnetDemoPanel.resx">
-      <DependentUpon>MagnetDemoPanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DemoPanel\GradualChangeExtensionDemoPanel.resx">
-      <DependentUpon>GradualChangeExtensionDemoPanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DemoPanel\NotificationBoxDemoPanel.resx">
-      <DependentUpon>NotificationBoxDemoPanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DemoPanel\ShutterDemoPanel.resx">
-      <DependentUpon>ShutterDemoPanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DemoPanel\SimpleCardDemoPanel.resx">
-      <DependentUpon>SimpleCardDemoPanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DemoPanel\SlideBoxDemoPanel.resx">
-      <DependentUpon>SlideBoxDemoPanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DemoPanel\StageLayoutDemoPanel.resx">
-      <DependentUpon>StageLayoutDemoPanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DemoPanel\ToastDemoPanel.resx">
-      <DependentUpon>ToastDemoPanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="ApeFree.ApeDialogs" Version="0.10.18" />
+    <PackageReference Condition="'$(TargetFramework)' == 'net10.0-windows' Or '$(TargetFramework)' == 'net8.0-windows'" Include="System.IO.Ports" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\ApeFree.ApeForms\ApeFree.ApeForms.Core\ApeFree.ApeForms.Core.csproj" />
+    <ProjectReference Include="..\..\ApeFree.ApeForms\ApeFree.ApeForms.Forms\ApeFree.ApeForms.Forms.csproj" />
+    <ProjectReference Include="..\..\ApeFree.ApeForms\ApeFree.ApeForms.TemplateNest\ApeFree.ApeForms.TemplateNest.csproj" />
+    <ProjectReference Include="..\..\ApeFree.Cake2D\ApeFree.Cake2D\ApeFree.Cake2D.csproj" />
+    <ProjectReference Include="..\..\ApeFree.Cake2D\ApeFree.Cake2D.Gdi\ApeFree.Cake2D.Gdi.csproj" />
+    <ProjectReference Include="..\..\STTech.CodePlus\STTech.CodePlus\STTech.CodePlus.csproj" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'net10.0-windows' Or '$(TargetFramework)' == 'net8.0-windows'">
+    <ProjectReference Include="..\..\ApeFree.Cake2D\ApeFree.Cake2D.Skia\ApeFree.Cake2D.Skia.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="packages.config" />
-    <None Include="Properties\Settings.settings">
+    <Compile Update="Properties\Settings.Designer.cs">
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.settings</DependentUpon>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-    </Compile>
   </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\ApeForms_Logo.png" />
-    <None Include="Resources\ImageButton_13.png" />
-    <None Include="Resources\ImageButton_12.png" />
-    <None Include="Resources\ImageButton_11.png" />
-    <None Include="Resources\ImageButton_1.png" />
-    <None Include="Resources\Magnet_13.jpg" />
-    <None Include="Resources\Magnet_12.jpg" />
-    <None Include="Resources\Magnet_11.jpg" />
-    <None Include="Resources\Magent_02.png" />
-    <None Include="Resources\Magent_03.png" />
-    <None Include="Resources\Magent_04.png" />
-    <None Include="Resources\Magent_05.png" />
-    <None Include="Resources\Magent_06.png" />
-    <None Include="Resources\Magent_07.png" />
-    <None Include="Resources\Magent_08.png" />
-    <None Include="Resources\Magent_09.png" />
-    <None Include="Resources\Magent_10.png" />
-    <None Include="Resources\Magent_01.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="ApeFree_Icon_64px.ico" />
-    <None Include="Resources\Icon_07.png" />
-    <None Include="Resources\Icon_06.png" />
-    <None Include="Resources\Icon_05.png" />
-    <None Include="Resources\Icon_04.png" />
-    <None Include="Resources\Icon_03.png" />
-    <None Include="Resources\Icon_02.png" />
-    <None Include="Resources\Icon_01.png" />
-    <None Include="Resources\Icon_00.png" />
-    <None Include="Resources\Icon_08.png" />
-    <None Include="Resources\Icon_09.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\ApeFree.ApeDialogs\ApeFree.ApeDialogs\ApeFree.ApeDialogs.csproj">
-      <Project>{799e05d1-bc8b-4495-926b-11dfa4c57f4e}</Project>
-      <Name>ApeFree.ApeDialogs</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\ApeFree.ApeForms\ApeFree.ApeForms.Core\ApeFree.ApeForms.Core.csproj">
-      <Project>{f05b0121-6ef0-48d8-82c9-fd88d4bb2236}</Project>
-      <Name>ApeFree.ApeForms.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\ApeFree.ApeForms\ApeFree.ApeForms.Forms\ApeFree.ApeForms.Forms.csproj">
-      <Project>{3e4bd67b-0385-4f66-9eaa-cfbdd5519419}</Project>
-      <Name>ApeFree.ApeForms.Forms</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\ApeFree.ApeForms\ApeFree.ApeForms.TemplateNest\ApeFree.ApeForms.TemplateNest.csproj">
-      <Project>{7d6d77b3-c31f-4b2b-abbf-d72ddcf77af5}</Project>
-      <Name>ApeFree.ApeForms.TemplateNest</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\ApeFree.Cake2D\ApeFree.Cake2D\ApeFree.Cake2D.csproj">
-      <Project>{066a98ca-3054-4e93-8b0f-03599973f077}</Project>
-      <Name>ApeFree.Cake2D</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\STTech.CodePlus\STTech.CodePlus\STTech.CodePlus.csproj">
-      <Project>{c2281a1a-940c-4e2d-bb9b-a1a6465d1ae2}</Project>
-      <Name>STTech.CodePlus</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Import Project="..\packages\Fody.6.5.5\build\Fody.targets" Condition="Exists('..\packages\Fody.6.5.5\build\Fody.targets')" />
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>这台计算机上缺少此项目引用的 NuGet 程序包。使用“NuGet 程序包还原”可下载这些程序包。有关更多信息，请参见 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('..\packages\Fody.6.5.5\build\Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Fody.6.5.5\build\Fody.targets'))" />
-    <Error Condition="!Exists('..\packages\Costura.Fody.5.7.0\build\Costura.Fody.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Costura.Fody.5.7.0\build\Costura.Fody.props'))" />
-    <Error Condition="!Exists('..\packages\Costura.Fody.5.7.0\build\Costura.Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Costura.Fody.5.7.0\build\Costura.Fody.targets'))" />
-    <Error Condition="!Exists('..\..\ApeFree.ApeDesk\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\ApeFree.ApeDesk\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets'))" />
-  </Target>
-  <Import Project="..\packages\Costura.Fody.5.7.0\build\Costura.Fody.targets" Condition="Exists('..\packages\Costura.Fody.5.7.0\build\Costura.Fody.targets')" />
-  <Import Project="..\..\ApeFree.ApeDesk\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets" Condition="Exists('..\..\ApeFree.ApeDesk\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets')" />
+
 </Project>

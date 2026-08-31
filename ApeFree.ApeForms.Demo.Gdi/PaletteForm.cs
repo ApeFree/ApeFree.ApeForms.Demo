@@ -1,59 +1,110 @@
-using ApeFree.ApeForms.Core.Gdi;
-using ApeFree.Cake2D.Shapes;
+﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
+using ApeFree.Cake2D.Elements;
+using ApeFree.Cake2D.Elements.Containers;
+using ApeFree.Cake2D.Elements.Primitives;
+using ApeFree.Cake2D.Math;
 
 namespace ApeFree.ApeForms.Demo.Gdi
 {
     public partial class PaletteForm : Form
     {
+        private readonly Random _rand = new Random();
+
         public PaletteForm()
         {
             InitializeComponent();
-            box.Palette.OutputSize = new Size(1000, 1000);
-            box.Palette.OriginOffset = new PointF(box.Palette.OutputSize.Width / 2, box.Palette.OutputSize.Height / 2);
-            cbMode.Items.AddRange(Enum.GetValues(typeof(PictureBoxSizeMode)).Cast<object>().ToArray());
+
+            box.Scene.BackgroundColor = Color.FromArgb(248, 250, 252);
+            box.Scene.Add(new GridElement());
+            box.Scene.Add(new AxisElement());
         }
 
         private void btnDrawRect_Click(object sender, EventArgs e)
         {
-            box.Palette.DrawRectangle(new GdiStyle() { Pen = Pens.DarkGreen, Brush = Brushes.Green }, new RectangleShape(200, 200, 100, 100));
-            box.RefreshImage();
+            float x = _rand.Next(-200, 200);
+            float y = _rand.Next(-200, 200);
+            float w = _rand.Next(60, 150);
+            float h = _rand.Next(40, 120);
+
+            var rect = new RectangleElement(x, y, w, h)
+            {
+                Name = $"矩形 {_rand.Next(100, 999)}",
+                FillColor = Color.FromArgb(160, _rand.Next(50, 230), _rand.Next(50, 230), _rand.Next(50, 230)),
+                StrokeColor = Color.Black,
+                LineWidth = 1.5f,
+                ZIndex = 5
+            };
+            BindElementInteractivity(rect);
+            box.Scene.Add(rect);
+            box.Invalidate();
         }
 
         private void btnDrawCircle_Click(object sender, EventArgs e)
         {
-            //panel.Palette.DrawCircle(new GdiStyle() { Pen = Pens.DarkRed, Brush = Brushes.Red }, new CircleShape(0, 0, 280));
-            var layer = box.Palette.DrawCircle(new GdiStyle() { Pen = Pens.Black }, new CircleShape(0, 0, 490));
-            layer.Selectable = false;
-            box.RefreshImage();
+            float x = _rand.Next(-200, 200);
+            float y = _rand.Next(-200, 200);
+            float r = _rand.Next(30, 80);
+
+            var circle = new CircleElement(x, y, r)
+            {
+                Name = $"圆形 {_rand.Next(100, 999)}",
+                FillColor = Color.FromArgb(160, _rand.Next(50, 230), _rand.Next(50, 230), _rand.Next(50, 230)),
+                StrokeColor = Color.Black,
+                LineWidth = 1.5f,
+                ZIndex = 5
+            };
+            BindElementInteractivity(circle);
+            box.Scene.Add(circle);
+            box.Invalidate();
         }
 
         private void btnDrawEllipse_Click(object sender, EventArgs e)
         {
-            box.Palette.DrawEllipse(new GdiStyle() { Pen = Pens.DarkOrange, Brush = Brushes.Orange }, new EllipseShape(100, 100, 50, 100));
-            box.RefreshImage();
+            float x = _rand.Next(-200, 200);
+            float y = _rand.Next(-200, 200);
+            float rx = _rand.Next(40, 90);
+            float ry = _rand.Next(25, 60);
+
+            var ellipse = new EllipseElement(x, y, rx, ry)
+            {
+                Name = $"椭圆 {_rand.Next(100, 999)}",
+                FillColor = Color.FromArgb(160, _rand.Next(50, 230), _rand.Next(50, 230), _rand.Next(50, 230)),
+                StrokeColor = Color.Black,
+                LineWidth = 1.5f,
+                ZIndex = 5
+            };
+            BindElementInteractivity(ellipse);
+            box.Scene.Add(ellipse);
+            box.Invalidate();
+        }
+
+        private void BindElementInteractivity(Element2D element)
+        {
+            Color? originalFill = element.FillColor;
+            element.MouseEnter += (s, e) =>
+            {
+                if (originalFill.HasValue)
+                {
+                    element.FillColor = Color.FromArgb(240, originalFill.Value.R, originalFill.Value.G, originalFill.Value.B);
+                }
+                element.LineWidth = 3f;
+                box.Invalidate();
+            };
+
+            element.MouseLeave += (s, e) =>
+            {
+                element.FillColor = originalFill;
+                element.LineWidth = 1.5f;
+                box.Invalidate();
+            };
         }
 
         private void btnScale_Click(object sender, EventArgs e)
         {
-            box.Palette.Scale = 1f;
-            box.RefreshImage();
-        }
-
-        private void hsbImage_ValueChanged(object sender, EventArgs e)
-        {
-            box.Palette.ZoomCenter = new PointF(hsbImage.Value, vsbImage.Value);
-            box.RefreshImage();
-        }
-
-        private void cbMode_SelectedValueChanged(object sender, EventArgs e)
-        {
-            box.SizeMode = (PictureBoxSizeMode)cbMode.SelectedItem;
-        }
-
-        private void cbEnableMouseWheelScale_CheckedChanged(object sender, EventArgs e)
-        {
-            box.EnableMouseWheelScale = cbEnableMouseWheelScale.Checked;
+            box.Scene.Viewport.SetView(PointF.Empty, 800f);
+            box.Invalidate();
         }
     }
 }

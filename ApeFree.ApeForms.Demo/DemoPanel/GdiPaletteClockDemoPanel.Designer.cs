@@ -1,6 +1,4 @@
-﻿using ApeFree.ApeForms.Core.Gdi;
-
-namespace ApeFree.ApeForms.Demo.DemoPanel
+﻿namespace ApeFree.ApeForms.Demo.DemoPanel
 {
     partial class GdiPaletteClockDemoPanel
     {
@@ -33,9 +31,8 @@ namespace ApeFree.ApeForms.Demo.DemoPanel
             this.components = new System.ComponentModel.Container();
             this.timerClock = new System.Windows.Forms.Timer(this.components);
             this.gbCanvas = new System.Windows.Forms.GroupBox();
-            this.box = new PaletteBox();
+            this.box = new ApeFree.Cake2D.Gdi.Controls.Cake2DControl();
             this.gbCanvas.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.box)).BeginInit();
             this.SuspendLayout();
             // 
             // timerClock
@@ -53,18 +50,15 @@ namespace ApeFree.ApeForms.Demo.DemoPanel
             this.gbCanvas.Size = new System.Drawing.Size(560, 363);
             this.gbCanvas.TabIndex = 0;
             this.gbCanvas.TabStop = false;
-            this.gbCanvas.Text = "Canvas";
+            this.gbCanvas.Text = "Cake2D 交互式时钟画布 (支持滚轮缩放/拖拽平移/指针悬停高亮)";
             // 
-            // pictureBox1
+            // box
             // 
-            this.box.BackgroundImage = global::ApeFree.ApeForms.Demo.Properties.Resources.Magnet_13;
             this.box.Dock = System.Windows.Forms.DockStyle.Fill;
             this.box.Location = new System.Drawing.Point(3, 17);
-            this.box.Name = "pictureBox1";
+            this.box.Name = "box";
             this.box.Size = new System.Drawing.Size(554, 343);
-            this.box.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.box.TabIndex = 1;
-            this.box.TabStop = false;
             // 
             // GdiPaletteClockDemoPanel
             // 
@@ -74,14 +68,12 @@ namespace ApeFree.ApeForms.Demo.DemoPanel
             this.Name = "GdiPaletteClockDemoPanel";
             this.Size = new System.Drawing.Size(560, 363);
             this.gbCanvas.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.box)).EndInit();
             this.ResumeLayout(false);
-
         }
 
         #endregion
         private System.Windows.Forms.Timer timerClock;
         private System.Windows.Forms.GroupBox gbCanvas;
-        private PaletteBox box;
+        private ApeFree.Cake2D.Gdi.Controls.Cake2DControl box;
     }
 }
